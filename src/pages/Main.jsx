@@ -5,8 +5,8 @@ export function Main() {
   return (
     <div>
 
-      <img src={logotipo} alt="Logotipo Lucas Rodrigues" />
-      <h1>Main</h1>
+      {/* <img src={logotipo} alt="Logotipo Lucas Rodrigues" />
+      <h1>Main</h1> */}
       <Background />
     </div>
   );

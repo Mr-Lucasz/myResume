@@ -16,7 +16,7 @@ const Background = () => {
     mount.current.appendChild(stats.dom);
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color().setHSL(0.51, 0.4, 0.01);
+    scene.background = new THREE.Color().setHSL(0.51, 0.4, 0.01, THREE.SRGBColorSpace);
     scene.fog = new THREE.Fog(scene.background, 3500, 15000);
 
     const camera = new THREE.PerspectiveCamera(
@@ -55,13 +55,13 @@ const Background = () => {
    
 
     function addLight(h, s, l, x, y, z) {
-      const light = new THREE.PointLight(0xffffff, 1.5, 2000);
+      const light = new THREE.PointLight(0xffffff, 1.5, 2000, 0);
       light.color.setHSL(h, s, l);
       light.position.set(x, y, z);
       scene.add(light);
 
       const lensflare = new Lensflare();
-      lensflare.addElement(new LensflareElement(textureFlare0, 700, 0));
+      lensflare.addElement(new LensflareElement(textureFlare0, 700, 0, light.color));
       lensflare.addElement(new LensflareElement(textureFlare3, 60, 0.6));
       lensflare.addElement(new LensflareElement(textureFlare3, 70, 0.7));
       lensflare.addElement(new LensflareElement(textureFlare3, 120, 0.9));
