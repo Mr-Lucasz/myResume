@@ -6,7 +6,6 @@ import Stats from 'three/examples/jsm/libs/stats.module';
 import lensflare0 from "../assets/lensflare0.png";
 import lensflare3 from "../assets/lensflare3.png";
 
-
 const Background = () => {
   const mount = useRef(null);
   const stats = new Stats();
@@ -25,7 +24,7 @@ const Background = () => {
       1,
       15000
     );
-    camera.position.z = 250;
+    camera.position.z = 500; // Ajuste na posição da câmera para 500
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -51,9 +50,6 @@ const Background = () => {
     addLight(0.08, 0.8, 0.5, 0, 0, -1000);
     addLight(0.995, 0.5, 0.9, 5000, 5000, -1000);
 
-
-   
-
     function addLight(h, s, l, x, y, z) {
       const light = new THREE.PointLight(0xffffff, 1.5, 2000, 0);
       light.color.setHSL(h, s, l);
@@ -69,7 +65,7 @@ const Background = () => {
       light.add(lensflare);
     }
 
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const geometry = new THREE.BoxGeometry(250, 250, 250); // Ajuste na escala dos cubos
     const material = new THREE.MeshPhongMaterial({
       color: 0xffffff,
       specular: 0xffffff,
