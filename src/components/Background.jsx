@@ -5,10 +5,12 @@ import { Lensflare, LensflareElement } from "three/examples/jsm/objects/Lensflar
 import Stats from 'three/examples/jsm/libs/stats.module';
 import lensflare0 from "../assets/lensflare0.png";
 import lensflare3 from "../assets/lensflare3.png";
+import { useState } from "react";
 
 const Background = () => {
   const mount = useRef(null);
   const stats = new Stats();
+  
 
   useEffect(() => {
     // Create stats instance and append to mount
@@ -72,6 +74,8 @@ const Background = () => {
       shininess: 50,
     });
 
+    
+
     for (let i = 0; i < 3000; i++) {
       const cube = new THREE.Mesh(geometry, material);
       cube.position.x = 8000 * (2.0 * Math.random() - 1.0);
@@ -84,6 +88,8 @@ const Background = () => {
       cube.updateMatrix();
       scene.add(cube);
     }
+
+    
 
     const clock = new THREE.Clock();
 
