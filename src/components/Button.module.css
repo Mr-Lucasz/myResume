@@ -1,9 +1,43 @@
-.button{
-    background-color: #5a5a5a28;
-    width: 8rem;
+/* Button.module.css */
+@import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap');
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-/* pulsar botão */
-.button:hover{
-    background-color: #5a5a5a;
-    transition: background-color 0.2s;
+
+.button {
+  width: 8rem;
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+  transition: background-color 0.2s, stroke-dashoffset 1s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.svgBorder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2; /* Optional: Adjust stroke width as needed */
+}
+
+.bgLine,
+.hlLine {
+  stroke-dasharray: 472; /* Total length of the path (178 + 58 + 178 + 58) */
+  stroke-dashoffset: 472; /* Initially set to the same value as the dasharray */
+  transition: stroke-dashoffset 1s ease-in-out;
+}
+
+.button:hover {
+  background: #4F95DA;
+  color: #fff;
+}
+
+.button:hover .hlLine {
+  stroke-dashoffset: 0; /* Set to 0 to reveal the full border on hover */
 }
