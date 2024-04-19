@@ -9,14 +9,18 @@
 .navbarList{
     display: flex;
     gap: 1rem;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
-    
+    max-height: 50px;
+    width: 100%;
 }
 
 /* remover ponto list  e hove */
 .navbarList li{
+    height: 100%;
     list-style: none;
+    padding: 0.75rem 1rem;
 }
 
 .navbarList a{
@@ -24,6 +28,9 @@
     color: #ffffff;
 }
 
+/* hover bottom transition com entrada lateral da esquerdarpara direita */
 .navbarList a:hover{
-    color: #f1c40f;
+    border-bottom: 2px solid #ffffff;
+    transition: border-bottom 0.2s;
+
 }

@@ -1,0 +1,29 @@
+/* Main.module.css */
+.playButton {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    color: #fff;
+    background: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .playButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .playButton:focus {
+    outline: none;
+  }
+  
+  .playContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; /* Use the full width of the viewport */
+    height: 100vh; /* Use the full height of the viewport */
+  }

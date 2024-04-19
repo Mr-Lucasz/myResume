@@ -1,0 +1,9 @@
+.button{
+    background-color: #5a5a5a28;
+    width: 8rem;
+}
+/* pulsar botão */
+.button:hover{
+    background-color: #5a5a5a;
+    transition: background-color 0.2s;
+}
