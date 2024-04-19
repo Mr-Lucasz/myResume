@@ -1,13 +1,12 @@
-import logotipo from "../assets/logotipo-lucas-rodrigues.svg";
-import Background from "../components/Background";
+import { Background } from "../components/Background";
+import { Header } from "../components/TopNavigation/Header";
 
 export function Main() {
   return (
     <div>
-
-      {/* <img src={logotipo} alt="Logotipo Lucas Rodrigues" />
-      <h1>Main</h1> */}
-      <Background />
+      <Background>
+        <Header />
+      </Background>
     </div>
   );
 }

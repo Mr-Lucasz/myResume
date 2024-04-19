@@ -1,23 +1,30 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { FlyControls } from "three/examples/jsm/controls/FlyControls";
-import { Lensflare, LensflareElement } from "three/examples/jsm/objects/Lensflare.js";
-import Stats from 'three/examples/jsm/libs/stats.module';
+import {
+  Lensflare,
+  LensflareElement,
+} from "three/examples/jsm/objects/Lensflare.js";
+import Stats from "three/examples/jsm/libs/stats.module";
 import lensflare0 from "../assets/lensflare0.png";
 import lensflare3 from "../assets/lensflare3.png";
-import { useState } from "react";
+import props from "prop-types";
 
-const Background = () => {
+export function Background({children}) {
   const mount = useRef(null);
   const stats = new Stats();
-  
 
   useEffect(() => {
     // Create stats instance and append to mount
     mount.current.appendChild(stats.dom);
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color().setHSL(0.51, 0.4, 0.01, THREE.SRGBColorSpace);
+    scene.background = new THREE.Color().setHSL(
+      0.51,
+      0.4,
+      0.01,
+      THREE.SRGBColorSpace
+    );
     scene.fog = new THREE.Fog(scene.background, 3500, 15000);
 
     const camera = new THREE.PerspectiveCamera(
@@ -59,7 +66,9 @@ const Background = () => {
       scene.add(light);
 
       const lensflare = new Lensflare();
-      lensflare.addElement(new LensflareElement(textureFlare0, 700, 0, light.color));
+      lensflare.addElement(
+        new LensflareElement(textureFlare0, 700, 0, light.color)
+      );
       lensflare.addElement(new LensflareElement(textureFlare3, 60, 0.6));
       lensflare.addElement(new LensflareElement(textureFlare3, 70, 0.7));
       lensflare.addElement(new LensflareElement(textureFlare3, 120, 0.9));
@@ -74,8 +83,6 @@ const Background = () => {
       shininess: 50,
     });
 
-    
-
     for (let i = 0; i < 3000; i++) {
       const cube = new THREE.Mesh(geometry, material);
       cube.position.x = 8000 * (2.0 * Math.random() - 1.0);
@@ -89,8 +96,6 @@ const Background = () => {
       scene.add(cube);
     }
 
-    
-
     const clock = new THREE.Clock();
 
     function animate() {
@@ -99,6 +104,13 @@ const Background = () => {
       controls.update(delta);
       renderer.render(scene, camera);
       stats.update();
+      //rotation cube
+      scene.children.forEach((child) => {
+        if (child instanceof THREE.Mesh) {
+          child.rotation.x += 0.01;
+          child.rotation.y += 0.01;
+        }
+      });
     }
 
     function handleResize() {
@@ -120,7 +132,11 @@ const Background = () => {
     };
   }, []);
 
-  return <div ref={mount} style={{ width: "100vw", height: "100vh" }} />;
-};
+  return <div ref={mount} style={{ width: "100vw", height: "100vh" }} >
+    {children}
+    </div>;
+}
 
-export default Background;
+Background.propTypes = {
+  children: props.node,
+};
