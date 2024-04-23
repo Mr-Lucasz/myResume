@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 export function Button({ children, onClick }) {
   return (
     <div className={styles.container}>
-      <button onClick={onClick} className={styles["btn-6"]}>
+      <button onClick={onClick} className={styles.btn}>
         <span>{children}</span>
       </button>
     </div>

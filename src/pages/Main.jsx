@@ -3,7 +3,9 @@ import { useState } from 'react';
 import { Background } from "../components/Background";
 import { Header } from "../components/TopNavigation/Header";
 import { LoadingScreen } from '../components/LoadingScreen.jsx';
+import { AboutMe } from './sections/AboutMe.jsx';
 import styles from "./Main.module.css";
+
 
 export function Main() {
   const [isLoading, setIsLoading] = useState(false);
@@ -27,7 +29,9 @@ export function Main() {
       <div>
         <Background>
           <Header />
-          {/* O restante do seu conteúdo principal vai aqui */}
+          {/*Sections*/}
+          <AboutMe />
+
         </Background>
       </div>
     );
