@@ -9,6 +9,7 @@ import Stats from "three/examples/jsm/libs/stats.module";
 import lensflare0 from "../assets/lensflare0.png";
 import lensflare3 from "../assets/lensflare3.png";
 import props from "prop-types";
+import styles from "./Background.module.css";
 
 export function Background({children}) {
   const mount = useRef(null);
@@ -41,7 +42,7 @@ export function Background({children}) {
     mount.current.appendChild(renderer.domElement);
 
     const controls = new FlyControls(camera, renderer.domElement);
-    controls.movementSpeed = 2500;
+    controls.movementSpeed = 2000;
     controls.rollSpeed = Math.PI / 6;
     controls.autoForward = false;
     controls.dragToLook = false;
@@ -58,6 +59,7 @@ export function Background({children}) {
     addLight(0.55, 0.9, 0.5, 5000, 0, -1000);
     addLight(0.08, 0.8, 0.5, 0, 0, -1000);
     addLight(0.995, 0.5, 0.9, 5000, 5000, -1000);
+    addLight(0.995, 0.7, 0.7, 0, 5000, 1000);
 
     function addLight(h, s, l, x, y, z) {
       const light = new THREE.PointLight(0xffffff, 1.5, 2000, 0);
@@ -132,7 +134,7 @@ export function Background({children}) {
     };
   }, []);
 
-  return <div ref={mount} style={{ width: "100vw", height: "100vh" }} >
+  return <div ref={mount} style={{ width: "100%", height: "100vh" }} className={styles.divBackgorun} >
     {children}
     </div>;
 }

@@ -1,11 +1,11 @@
 // Main.js
-import { useState } from 'react';
+import { useState } from "react";
 import { Background } from "../components/Background";
 import { Header } from "../components/TopNavigation/Header";
-import { LoadingScreen } from '../components/LoadingScreen.jsx';
-import { AboutMe } from './sections/AboutMe.jsx';
+import { LoadingScreen } from "../components/LoadingScreen.jsx";
+import { AboutMe } from "./sections/AboutMe.jsx";
 import styles from "./Main.module.css";
-
+import AnimatedCursor from "react-animated-cursor";
 
 export function Main() {
   const [isLoading, setIsLoading] = useState(false);
@@ -28,15 +28,15 @@ export function Main() {
     return (
       <div>
         <Background>
+          <AnimatedCursor color="193, 11, 111" />
           <Header />
-          {/*Sections*/}
           <AboutMe />
-
         </Background>
+        {/*Sections*/}
+
       </div>
     );
   }
-
   // Tela inicial com o botão Start
   return (
     <div className={styles.playContainer}>
