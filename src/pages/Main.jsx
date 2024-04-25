@@ -14,9 +14,13 @@ export function Main() {
   const [isLoading, setIsLoading] = useState(false);
   const [showContent, setShowContent] = useState(false);
 
+
+
   const handleStartClick = () => {
     setIsLoading(true);
   };
+
+
 
   const handleVideoEnd = () => {
     setIsLoading(false);
