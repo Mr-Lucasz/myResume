@@ -3,10 +3,7 @@ import { Main } from "./pages/Main";
 import "./App.module.css";
 
 
+
 export function App() {
-  return (
-    <Routes>
-      <Route path="/*" element={<Main />} />
-    </Routes>
-  );
+  return <Main />;
 }
