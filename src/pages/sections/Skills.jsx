@@ -1,11 +1,11 @@
-import styles from "./AboutMe.module.css";
+import styles from "./Skills.module.css";
 
-export function AboutMe() {
+export function Skills() {
   
   
     return (
-    <section id="about" className={styles.sectionAbout}>
-      <h2>About me</h2>
+    <section id="skills" className={styles.sectionExperiences}>
+      <h2>Skills</h2>
       <p className={styles.paragraph}>
         Im a front-end developer with a passion for creating beautiful and
         intuitive user interfaces. I have experience working with modern

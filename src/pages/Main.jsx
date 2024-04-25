@@ -4,8 +4,12 @@ import { Background } from "../components/Background";
 import { Header } from "../components/TopNavigation/Header";
 import { LoadingScreen } from "../components/LoadingScreen.jsx";
 import { AboutMe } from "./sections/AboutMe.jsx";
+import { Experiences } from "./sections/Experiences.jsx";
+import { Skills } from "./sections/Skills.jsx";
 import styles from "./Main.module.css";
 import AnimatedCursor from "react-animated-cursor";
+import { Projects } from "./sections/Projects.jsx";
+import { Contact } from "./sections/Contact.jsx";
 
 export function Main() {
   const [isLoading, setIsLoading] = useState(false);
@@ -30,10 +34,14 @@ export function Main() {
         <Background>
           <AnimatedCursor color="193, 11, 111" />
           <Header />
-          <AboutMe />
+          <section className={styles.sections}>
+            <AboutMe />
+            <Experiences />
+            <Skills/>
+            <Projects/>
+            <Contact/>
+          </section>
         </Background>
-        {/*Sections*/}
-
       </div>
     );
   }
