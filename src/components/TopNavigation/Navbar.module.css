@@ -25,12 +25,16 @@
 
 .navbarList a{
     text-decoration: none;
-    color: #ffffff;
+    color: #080808;
 }
 
-/* hover bottom transition com entrada lateral da esquerdarpara direita */
+/* hover bottom transition com entrada lateral da esquerda para direita */
 .navbarList a:hover{
-    border-bottom: 2px solid #ffffff;
+    border-bottom: 2px solid #111111;
     transition: border-bottom 0.2s;
 
+}
+
+html{
+    scroll-behavior: smooth;
 }

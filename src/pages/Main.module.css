@@ -88,11 +88,17 @@
   width: 100vw;
   height: 100vh;
   /* gradiente DARK background */
-  background-image: radial-gradient(circle, #24232c, #1b1a23, #12111c, #090910, #000000);
-  
+  background-image: radial-gradient(
+    circle,
+    #24232c,
+    #1b1a23,
+    #12111c,
+    #090910,
+    #000000
+  );
 }
 
-.sections {
+.mainContent {
   position: absolute;
   top: 7.25rem;
   left: 0;
@@ -103,5 +109,8 @@
   flex-direction: column;
   background: transparent;
   width: 100%;
-  color: #fff;
+  color: #0e0e0e;
+  margin: 0 auto;
+  /* distancia de uma page/section pra outro */
+  gap: 1rem;
 }

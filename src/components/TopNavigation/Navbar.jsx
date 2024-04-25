@@ -1,24 +1,15 @@
-import styles from "./Navbar.module.css";
+import { Link } from 'react-router-dom';
+import styles from './Navbar.module.css';
 
 export function Navbar() {
   return (
     <nav className={styles.navbar}>
       <ul className={styles.navbarList}>
-        <li>
-          <a href="#about">About me</a>
-        </li>
-        <li>
-          <a href="#experiences">Experiencies</a>
-        </li>
-        <li>
-          <a href="#skills">Skills</a>
-        </li>
-        <li>
-          <a href="#projects">Projects</a>
-        </li>
-        <li>
-          <a href="#contact">Contact me</a>
-        </li>
+        <li><Link to="/about">About me</Link></li>
+        <li><Link to="/experiences">Experiences</Link></li>
+        <li><Link to="/skills">Skills</Link></li>
+        <li><Link to="/projects">Projects</Link></li>
+        <li><Link to="/contact">Contact me</Link></li>
       </ul>
     </nav>
   );
