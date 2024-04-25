@@ -100,7 +100,7 @@
 
 .mainContent {
   position: absolute;
-  padding-top: 7.25rem; /* Espaço no topo igual à altura do header */
+  padding-top: 6rem; /* Espaço no topo igual à altura do header */
   display: flex;
   justify-content: center;
   align-items: center;

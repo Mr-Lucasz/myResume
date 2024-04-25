@@ -54,6 +54,7 @@ section {
   justify-content: center;
   align-items: center;
   padding: 0.5rem 1rem;
+  box-sizing: border-box;
   border: solid 1px #000;
   border-radius: 0.75rem;
   margin-bottom: 1.5rem;
@@ -65,5 +66,5 @@ html {
 }
 
 main {
-  scroll-padding-top: 7.25rem; /* Ajuste para a altura do seu cabeçalho */
+  scroll-padding-top: 6rem; /* Ajuste para a altura do seu cabeçalho */
 }
