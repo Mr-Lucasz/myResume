@@ -33,7 +33,6 @@ export function Main() {
       <div className={styles.page}>
         <AnimatedCursor color="193, 11, 111" />
         <Header />
-        <Navbar /> {/* Inclua o Navbar para navegação */}
         <main className={styles.mainContent}>
           {/* Renderize todas as seções diretamente aqui */}
           <AboutMe />

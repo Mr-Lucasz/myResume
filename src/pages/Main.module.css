@@ -111,6 +111,8 @@
   width: 100%;
   color: #0e0e0e;
   margin: 0 auto;
-  /* distancia de uma page/section pra outro */
-  gap: 1rem;
+}
+
+.mainContent > section {
+  min-height: calc(100vh - 5rem);
 }
