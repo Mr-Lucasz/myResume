@@ -1,6 +1,25 @@
 import styles from "./Experiences.module.css";
+import { gsap } from "gsap";
+import { useLayoutEffect } from "react";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 export function Experiences() {
+
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to("#about", {
+      opacity: 1, // Altera a opacidade para 0
+      scrollTrigger: {
+        trigger: "#experiences", //
+        start: "top center", 
+        end: "bottom bottom",
+        scrub: true,
+      },
+    });
+    return () => {
+      gsap.killTweensOf("#about");
+    };
+}, []);
   
   
     return (

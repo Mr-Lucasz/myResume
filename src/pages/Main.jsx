@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Background } from "../components/Background";
+import { useState, useEffect, useLayoutEffect } from "react";
+//import { Background } from "../components/Background";
 import { Header } from "../components/TopNavigation/Header";
 import { LoadingScreen } from "../components/LoadingScreen";
 import { AboutMe } from "./sections/AboutMe";
@@ -12,7 +12,7 @@ import AnimatedCursor from "react-animated-cursor";
 
 export function Main() {
   const [isLoading, setIsLoading] = useState(false);
-  const [showContent, setShowContent] = useState(false);
+  const [showContent, setShowContent] = useState(true);
 
   const handleStartClick = () => {
     setIsLoading(true);

@@ -1,4 +1,3 @@
 .sectionExperiences {
-    background-color: aquamarine;
-    overflow: auto;
+    transform: translateX(100rem) rotate(45deg);
 }
