@@ -100,19 +100,18 @@
 
 .mainContent {
   position: absolute;
-  top: 7.25rem;
-  left: 0;
+  padding-top: 7.25rem; /* Espaço no topo igual à altura do header */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
   flex-direction: column;
   background: transparent;
   width: 100%;
   color: #0e0e0e;
   margin: 0 auto;
+
 }
 
 .mainContent > section {
-  min-height: calc(100vh - 5rem);
+  min-height: calc(100vh - 7.25rem);
 }
