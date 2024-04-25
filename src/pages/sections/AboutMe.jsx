@@ -1,9 +1,7 @@
 import styles from "./AboutMe.module.css";
 
 export function AboutMe() {
-  
-  
-    return (
+  return (
     <section id="about" className={styles.sectionAbout}>
       <h2>About me</h2>
       <p className={styles.paragraph}>

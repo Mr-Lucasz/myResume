@@ -4,24 +4,7 @@
   justify-content: center;
   align-items: center;
   padding: 0.5rem 1rem;
-  border: solid 1px #000;
   border-radius: 0.75rem;
+  background-color: aquamarine;
+  overflow: auto;
 }
-
-/* .sectionAbout h2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
-  margin: 0;
-} */
-
-/* .paragraph{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    margin: 0;
-} */

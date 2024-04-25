@@ -55,10 +55,19 @@ section {
   align-items: center;
   padding: 0.5rem 1rem;
   box-sizing: border-box;
-  border: solid 1px #000;
   border-radius: 0.75rem;
   margin-bottom: 1.5rem;
   width: 90%;
+}
+
+.fadeIn {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fadeIn.no-transition {
+  opacity: 1;
+  transition: none;
 }
 
 html {
