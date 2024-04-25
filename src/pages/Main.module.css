@@ -87,7 +87,9 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #00000098;
+  /* gradiente DARK background */
+  background-image: radial-gradient(circle, #24232c, #1b1a23, #12111c, #090910, #000000);
+  
 }
 
 .sections {
