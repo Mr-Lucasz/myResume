@@ -14,13 +14,9 @@ export function Main() {
   const [isLoading, setIsLoading] = useState(false);
   const [showContent, setShowContent] = useState(false);
 
-
-
   const handleStartClick = () => {
     setIsLoading(true);
   };
-
-
 
   const handleVideoEnd = () => {
     setIsLoading(false);
@@ -53,6 +49,7 @@ export function Main() {
   // Tela inicial com o botão Start
   return (
     <div className={styles.playContainer}>
+      <AnimatedCursor color="193, 11, 111" />
       <button className={styles.playButton} onClick={handleStartClick}>
         PLAY
       </button>
