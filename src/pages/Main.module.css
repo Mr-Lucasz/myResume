@@ -108,10 +108,14 @@
   background: transparent;
   width: 100%;
   color: #0e0e0e;
-  margin: 0 auto;
-
+  margin-top: 0;
 }
 
 .mainContent > section {
   min-height: calc(100vh - 7.25rem);
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
 }
