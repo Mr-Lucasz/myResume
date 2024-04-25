@@ -5,5 +5,9 @@ import "./App.module.css";
 
 
 export function App() {
-  return <Main />;
+  return (
+    <Routes>
+      <Route path="/" element={<Main />} />
+    </Routes>
+  );
 }
