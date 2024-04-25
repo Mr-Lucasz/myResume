@@ -30,18 +30,18 @@ export function Main() {
   if (showContent) {
     return (
       <div className={styles.page}>
-        <Background>
-          <AnimatedCursor color="193, 11, 111" />
-          <Header />
-          <main className={styles.mainContent}>
-            {/* Renderize todas as seções diretamente aqui */}
-            <AboutMe />
-            <Experiences />
-            <Skills />
-            <Projects />
-            <Contact />
-          </main>
-        </Background>
+        {/* <Background>*/}
+        <AnimatedCursor color="193, 11, 111" />
+        <Header />
+        <main className={styles.mainContent}>
+          {/* Renderize todas as seções diretamente aqui */}
+          <AboutMe />
+          <Experiences />
+          <Skills />
+          <Projects />
+          <Contact />
+        </main>
+        {/* </Background>*/}
       </div>
     );
   }
