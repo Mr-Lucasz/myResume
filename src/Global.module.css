@@ -21,6 +21,7 @@ p {
   font-size: 1rem;
   padding: 0.5rem 1rem;
   margin: 0;
+  color: white;
 }
 
 h2 {
@@ -30,6 +31,7 @@ h2 {
   font-size: 2rem;
   padding: 0.5rem 1rem;
   margin: 0;
+  color: white;
 }
 
 section {
@@ -43,7 +45,7 @@ section {
   border-radius: 0.75rem;
   margin-bottom: 1.5rem;
   width: 96%;
-  border: 1px solid #181818;
+  border: 1px solid #eeeeee;
 
 }
 

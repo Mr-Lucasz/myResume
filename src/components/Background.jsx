@@ -134,7 +134,7 @@ export function Background({children}) {
     };
   }, []);
 
-  return <div ref={mount} style={{ width: "100%", height: "100vh" }} className={styles.divBackgorun} >
+  return <div ref={mount} style={{ width: "100%", height: "100vh" }} className={styles.divBackground} >
     {children}
     </div>;
 }
