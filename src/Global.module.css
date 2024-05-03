@@ -13,18 +13,6 @@ body {
   min-width: 320px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-
 
 p {
   display: flex;
@@ -55,7 +43,7 @@ section {
   border-radius: 0.75rem;
   margin-bottom: 1.5rem;
   width: 96%;
-  background-color: aquamarine;
+  border: 1px solid #181818;
 
 }
 

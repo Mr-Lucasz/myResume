@@ -16,9 +16,13 @@
   background-color: #f1f1f10e;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: rgb(31, 30, 30);
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 1rem;
 }
 .btn:hover {
-  background-color: #f1f1f12f;
+  /* florescente */
+  background-color:rgba(127, 255, 212, 0.425);
   cursor: pointer;
   transition: 0.5s;
   transform: scale(1.2);
