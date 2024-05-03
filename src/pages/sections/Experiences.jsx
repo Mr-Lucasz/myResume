@@ -1,29 +1,13 @@
 import styles from "./Experiences.module.css";
-import { gsap } from "gsap";
-import { useLayoutEffect } from "react";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { useInView } from "react-intersection-observer";
 
 export function Experiences() {
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+  });
 
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.to("#about", {
-      opacity: 1, // Altera a opacidade para 0
-      scrollTrigger: {
-        trigger: "#experiences", //
-        start: "top center", 
-        end: "bottom bottom",
-        scrub: true,
-      },
-    });
-    return () => {
-      gsap.killTweensOf("#about");
-    };
-}, []);
-  
-  
-    return (
-    <section id="experiences" className={styles.sectionExperiences}>
+  return (
+    <section id="experiences" className={styles.sectionExperiences} ref={ref} style={{ opacity: inView ? "1" : "0" }}>
       <h2>Experiencies</h2>
       <p className={styles.paragraph}>
         Im a front-end developer with a passion for creating beautiful and

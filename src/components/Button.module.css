@@ -19,7 +19,6 @@
 }
 .btn:hover {
   background-color: #f1f1f12f;
-
   cursor: pointer;
   transition: 0.5s;
   transform: scale(1.2);

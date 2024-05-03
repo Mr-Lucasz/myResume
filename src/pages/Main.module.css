@@ -112,7 +112,9 @@
 }
 
 .mainContent > section {
+  display: flex;
   min-height: calc(100vh - 7rem);
+  justify-content: flex-start;
 }
 
 .page {

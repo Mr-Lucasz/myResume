@@ -1,3 +1,3 @@
-.sectionExperiences {
-    transform: translateX(100rem) rotate(45deg);
+.sectionExperiences{
+    transition: opacity 0.3s ease;  
 }
