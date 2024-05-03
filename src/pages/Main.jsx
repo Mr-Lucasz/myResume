@@ -1,5 +1,5 @@
 import { useState } from "react";
-//import { Background } from "../components/Background";
+import { Background } from "../components/Background";
 import { Header } from "../components/TopNavigation/Header";
 import { LoadingScreen } from "../components/LoadingScreen";
 import { AboutMe } from "./sections/AboutMe";
@@ -30,7 +30,7 @@ export function Main() {
   if (showContent) {
     return (
       <div className={styles.page}>
-        {/* <Background>*/}
+        <Background>
         <AnimatedCursor color="193, 11, 111" />
         <Header />
         <main className={styles.mainContent}>
@@ -41,7 +41,7 @@ export function Main() {
           <Projects />
           <Contact />
         </main>
-        {/* </Background>*/}
+        </Background>
       </div>
     );
   }
