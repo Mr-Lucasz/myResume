@@ -29,7 +29,7 @@ export function Contact() {
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="message">Message</label>
-          <textarea id="message" name="message" required></textarea>
+          <input id="message" name="message" required></input>
         </div>
         <button type="submit">Send</button>
       </form>
