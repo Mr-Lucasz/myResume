@@ -30,7 +30,7 @@ export function Main() {
   if (showContent) {
     return (
       <>
-        <Background />
+        {/* <Background /> */}
         <div className={styles.page}>
           <AnimatedCursor color="193, 11, 111" />
           <Header />

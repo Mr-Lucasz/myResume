@@ -1,3 +1,34 @@
-.sectionContact{
-    transition: opacity 0.3s ease;
+.sectionContact {
+  transition: opacity 0.3s ease;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 0.75rem;
+  background-color: #272323;
+  gap: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+#message {
+  width: 100%;
+  height: 10rem;
+  cursor:pointer;
+}
+
+#email {
+  width: 100%;
 }
