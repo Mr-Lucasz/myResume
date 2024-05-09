@@ -11,7 +11,7 @@ import lensflare3 from "../assets/lensflare3.png";
 import props from "prop-types";
 import styles from "./Background.module.css";
 
-export function Background({children}) {
+export function Background({ children }) {
   const mount = useRef(null);
   const stats = new Stats();
 
@@ -42,7 +42,7 @@ export function Background({children}) {
     mount.current.appendChild(renderer.domElement);
 
     const controls = new FlyControls(camera, renderer.domElement);
-    controls.movementSpeed = 2000;
+    controls.movementSpeed = Math.min(2000, controls.movementSpeed);
     controls.rollSpeed = Math.PI / 6;
     controls.autoForward = false;
     controls.dragToLook = false;
@@ -134,9 +134,15 @@ export function Background({children}) {
     };
   }, []);
 
-  return <div ref={mount} style={{ width: "100%", height: "100vh" }} className={styles.divBackground} >
-    {children}
-    </div>;
+  return (
+    <div
+      ref={mount}
+      style={{ width: "100%", height: "100vh" }}
+      className={styles.divBackground}
+    >
+      {children}
+    </div>
+  );
 }
 
 Background.propTypes = {
