@@ -3,9 +3,16 @@ import styles from "./Header.module.css";
 import logotipo from "../../assets/logotipo-lucas-rodrigues.svg";
 import { Navbar } from "./Navbar";
 import { Button } from "../Button";
+import { useInView } from "react-intersection-observer";
 
 export function Header() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [sectionInView, setSectionInView] = useState(true);
+
+    const [ref, inView] = useInView({
+    threshold: 0.1,
+    onChange: setSectionInView,
+  });
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -24,7 +31,7 @@ export function Header() {
   };
 
   return (
-    <header className={styles.header}>
+<header className={`${styles.header} ${sectionInView ? '' : styles.blur}`}>
       <div>
         <img
           src={logotipo}

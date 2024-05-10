@@ -40,3 +40,6 @@
 .logotipo:hover {
   animation: none;
 }
+.blur {
+  filter: blur(5px);
+}
