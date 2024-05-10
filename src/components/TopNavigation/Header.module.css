@@ -3,7 +3,7 @@
   top: 0; 
   left: 0; 
   width: 100%; 
-  height: 6rem;
+  min-height: 6rem;
   display: flex;
   z-index: 1000;
   flex-direction: row;
