@@ -3,23 +3,31 @@ import styles from "./Header.module.css";
 import logotipo from "../../assets/logotipo-lucas-rodrigues.svg";
 import { Navbar } from "./Navbar";
 import { Button } from "../Button";
-import { useInView } from "react-intersection-observer";
 
 export function Header() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  const [ref, inView] = useInView({
-    threshold: 0.1,
-    triggerOnce: false,
-  });
+  const [transparency, setTransparency] = useState(0);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
+
+    const handleScroll = () => {
+      let scrollPosition = window.pageYOffset;
+      if (scrollPosition > 500) {
+        setTransparency(1);
+      } else {
+        setTransparency(scrollPosition / 500);
+      }
+    };
+
     document.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener('scroll', handleScroll);
+
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -29,8 +37,13 @@ export function Header() {
     }px)`, // Efeito parallax
   };
 
+  const headerStyle = {
+    backgroundColor: `rgba(27, 27, 27, ${transparency * 0.85})`,
+    backdropFilter: `blur(${transparency * 5}px)`,
+  };
+
   return (
-    <header className={`${styles.header} ${inView ? styles.blur : ''}`}>
+    <header style={headerStyle} className={styles.header}>
       <div>
         <img
           src={logotipo}
