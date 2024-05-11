@@ -7,11 +7,10 @@ import { useInView } from "react-intersection-observer";
 
 export function Header() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [sectionInView, setSectionInView] = useState(true);
 
-    const [ref, inView] = useInView({
+  const [ref, inView] = useInView({
     threshold: 0.1,
-    onChange: setSectionInView,
+    triggerOnce: false,
   });
 
   useEffect(() => {
@@ -31,7 +30,7 @@ export function Header() {
   };
 
   return (
-<header className={`${styles.header} ${sectionInView ? '' : styles.blur}`}>
+    <header className={`${styles.header} ${inView ? styles.blur : ''}`}>
       <div>
         <img
           src={logotipo}
