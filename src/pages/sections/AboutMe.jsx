@@ -1,5 +1,6 @@
-import { useInView } from 'react-intersection-observer';
+import { useInView } from "react-intersection-observer";
 import styles from "./AboutMe.module.css";
+import Typist from "react-typist";
 
 export function AboutMe() {
   const [ref, inView] = useInView({
@@ -7,8 +8,14 @@ export function AboutMe() {
   });
 
   return (
-    <section id="about" className={styles.sectionAbout} ref={ref} style={{ opacity: inView ? "1" : "0" }}>
+    <section
+      id="about"
+      className={styles.sectionAbout}
+      ref={ref}
+      style={{ opacity: inView ? "1" : "0" }}
+    >
       <h2>About me</h2>
+
       <p className={styles.paragraph}>
         Im a front-end developer with a passion for creating beautiful and
         intuitive user interfaces. I have experience working with modern
