@@ -26,10 +26,10 @@
 }
 .btn:hover {
   /* florescente */
-  background-color:rgb(241, 241, 241);
+  background-color:    #012504;
   cursor: pointer;
   transition: 0.5s;
-  color: rgb(20, 20, 20);
+  color: rgb(212, 212, 212);
   transform: scale(1.2);
   font-weight: bold;
 }
