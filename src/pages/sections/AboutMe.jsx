@@ -26,7 +26,7 @@ export function AboutMe() {
       <div className={styles.container}>
         <aside className={styles.aside}>
           <h2 className={styles.glitchText}>
-            Heys Guys, I&apos; m Lucas Rodrigues :)
+            Heys Guys, <br/> I&apos; m Lucas Rodrigues :)
           </h2>
 
           <TypeAnimation
