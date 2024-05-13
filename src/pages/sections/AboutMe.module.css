@@ -17,16 +17,24 @@
   gap: 4rem;
   flex-direction: row;
   width: 100%;
-  padding: 0 20px;
+  padding: 1rem;
+  box-sizing: border-box;
+  margin: 1ren;
 }
+
+
+
 .aside {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 0 20px;
+  padding: 1rem;
+  box-sizing: border-box;
 }
+
+
 
 .aside2 {
   display: flex;
@@ -34,7 +42,8 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 0 20px;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .subtitle {
@@ -133,14 +142,29 @@
 
 
 .aside h2{
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 2.5rem;
   font-weight:900; 
   color: #fff;
   margin-bottom: 1rem;
   text-transform: uppercase;
+  padding: 0 1rem;
+}
 
-
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+  .aside h2 {
+    font-size: 1rem;
+  }
+  .glitchText {
+    font-size: 50%;
+  }
+  
 }
 
 .glitchText {
