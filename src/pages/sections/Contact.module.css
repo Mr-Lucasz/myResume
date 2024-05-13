@@ -23,12 +23,9 @@
   gap: 0.5rem;
 }
 
-#message {
+#message, #name, #email {
   width: 100%;
   height: 10rem;
   cursor:pointer;
 }
 
-#email {
-  width: 100%;
-}

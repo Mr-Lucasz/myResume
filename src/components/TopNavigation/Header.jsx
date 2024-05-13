@@ -23,11 +23,11 @@ export function Header() {
     };
 
     document.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -49,7 +49,7 @@ export function Header() {
           src={logotipo}
           alt="Logotipo Lucas Rodrigues"
           className={styles.logotipo}
-          style={logoStyle} 
+          style={logoStyle}
         />
       </div>
       <Navbar />

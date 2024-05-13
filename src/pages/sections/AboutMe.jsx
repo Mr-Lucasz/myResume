@@ -3,12 +3,18 @@ import styles from "./AboutMe.module.css";
 import Lottie from "lottie-react";
 import animationData from "../../assets/AboutMe.json";
 import { TypeAnimation } from "react-type-animation";
-import { AwesomeButton } from "react-awesome-button";
 
 export function AboutMe() {
   const [ref, inView] = useInView({
     threshold: 0.1,
   });
+
+  function handleContactClick() {
+    // Scroll suave para a seção de contato (#contact)
+    document.querySelector("#contact").scrollIntoView({
+      behavior: "smooth",
+    });
+  }
 
   return (
     <section
@@ -19,7 +25,10 @@ export function AboutMe() {
     >
       <div className={styles.container}>
         <aside className={styles.aside}>
-          <h2>Heys Guys, I&apos; m Lucas Rodrigues! 😎</h2>
+          <h2 className={styles.glitchText}>
+            Heys Guys, I&apos; m Lucas Rodrigues :)
+          </h2>
+
           <TypeAnimation
             className={styles.subtitle}
             sequence={[
@@ -32,17 +41,14 @@ export function AboutMe() {
             style={{ fontSize: "2em" }}
             repeat={Infinity}
           />
+          <button className={styles.playButton} onClick={handleContactClick}>
+            CONTACT ME
+          </button>
         </aside>
-        {/* <aside className={styles.aside2}>
+        <aside className={styles.aside2}>
           <Lottie animationData={animationData} />
-        </aside> */}
+        </aside>
       </div>
-      <button
-        className={styles.playButton}
-        onClick={() => console.log("Cliquei!")}
-      >
-        CONTACT ME
-      </button>
     </section>
   );
 }
