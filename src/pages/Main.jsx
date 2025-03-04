@@ -37,8 +37,8 @@ export function Main() {
           <main className={styles.mainContent}>
             {/* Renderize todas as seções diretamente aqui */}
             <AboutMe />
-            <Experiences />
             <Skills />
+            <Experiences />
             <Projects />
             <Contact />
           </main>

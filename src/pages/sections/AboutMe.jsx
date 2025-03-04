@@ -19,21 +19,20 @@ export function AboutMe() {
   return (
     <section
       id="about"
-      className={styles.sectionAbout}
+      className={`${styles.sectionAbout} ${inView ? styles.fadeIn : ""}`}
       ref={ref}
-      style={{ opacity: inView ? "1" : "0" }}
     >
       <div className={styles.container}>
         <aside className={styles.aside}>
           <h2 className={styles.glitchText}>
-            Heys Guys, <br/> I&apos; m Lucas Rodrigues :)
+            Heys Guys, <br /> I&apos;m Lucas Rodrigues :)
           </h2>
 
           <TypeAnimation
             className={styles.subtitle}
             sequence={[
               "I'm a Software Quality Analyst.",
-              "I'm a Enginner Software. 7/8",
+              "I'm a Software Engineer. 7/8",
               "I'm a technology enthusiast.",
             ]}
             wrapper="h3"

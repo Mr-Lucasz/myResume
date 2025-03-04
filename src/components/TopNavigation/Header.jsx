@@ -44,7 +44,7 @@ export function Header() {
 
   return (
     <header style={headerStyle} className={styles.header}>
-      <div>
+      <div className={styles.logoContainer}>
         <img
           src={logotipo}
           alt="Logotipo Lucas Rodrigues"

@@ -130,7 +130,9 @@ export function Background({ children }) {
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      mount.current.removeChild(stats.dom);
+      if (mount.current) {
+        mount.current.removeChild(stats.dom);
+      }
     };
   }, []);
 

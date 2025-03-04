@@ -1,3 +1,86 @@
-.sectionExperiences{
-    transition: opacity 0.3s ease;   
-}
+.sectionSkills {
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .sectionSkills h2 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-family: "Arial, sans-serif";
+  }
+  
+  .chartContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #1e1e1e 0%, #2e2e2e 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .chartFrame {
+    background-color: #2e2e2e;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .chartFrame h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-family: "Arial, sans-serif";
+  }
+  
+  .chartDescription {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .note {
+    color: #aaa;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .customTooltip {
+    background-color: #2e2e2e;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 12px;
+  }
+  
+  .tooltipLabel {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .tooltipValue {
+    margin: 0;
+  }
+
+  .legendText {
+    font-size: 10px;
+    white-space: pre-wrap; /* Permite quebra de linha */
+    text-align: center; /* Centraliza o texto */
+  }

@@ -4,10 +4,11 @@
   display: flex;
   flex-direction: row;
   transition: opacity 0.3s ease;
+  opacity: 0;
 }
 
-.sectionAbout a {
-  transition: all 0.3s ease-out;
+.sectionAbout.fadeIn {
+  opacity: 1;
 }
 
 .container {
@@ -21,8 +22,6 @@
   box-sizing: border-box;
 }
 
-
-
 .aside {
   display: flex;
   flex-direction: column;
@@ -32,8 +31,6 @@
   padding: 1rem;
   box-sizing: border-box;
 }
-
-
 
 .aside2 {
   display: flex;
@@ -65,7 +62,6 @@
   margin-top: 3.5rem;
   box-sizing: border-box;
   font-family: "Righteous", sans-serif;
-  /* pulse button */
 }
 
 .playButton:before {
@@ -138,13 +134,12 @@
   outline: none;
 }
 
-
-.aside h2{
+.aside h2 {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2.5rem;
-  font-weight:900; 
+  font-weight: 900;
   color: #fff;
   margin-bottom: 1rem;
   text-transform: uppercase;
@@ -162,7 +157,6 @@
   .glitchText {
     font-size: 50%;
   }
-  
 }
 
 .glitchText {
@@ -177,7 +171,5 @@
     2px -2px 0 blue,
     -2px 2px 0 green,
     2px -2px 0 yellow;
-/* scale */
   transform: scale(1.1);
-
 }

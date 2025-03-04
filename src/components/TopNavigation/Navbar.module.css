@@ -1,42 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
-.navbar{
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    flex-direction: row;
-    
+.navbar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-direction: row;
 }
 
-.navbarList{
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    max-height: 50px;
-    width: 100%;
+.navbarList {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  max-height: 50px;
+  width: 100%;
 }
 
-/* remover ponto list  e hove */
-.navbarList li{
-    height: 100%;
-    list-style: none;
-    padding: 0.75rem 1rem;
-    font-family: "Righteous", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.5rem;
+.navbarList li {
+  height: 100%;
+  list-style: none;
+  padding: 0.75rem 1rem;
+  font-family: "Righteous", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  position: relative;
+  overflow: hidden;
 }
 
-.navbarList a{
-    text-decoration: none;
-    color: #f5f5f5;
+.navbarList a {
+  text-decoration: none;
+  color: #f5f5f5;
+  position: relative;
+  z-index: 1;
 }
 
-/* hover bottom transition com entrada lateral da esquerda para direita */
-.navbarList a:hover{
-    border-bottom: 2px solid #ffffff;
-    transition: border-bottom 0.2s;
+.navbarList a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
 
+.navbarList a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.navbarList a:hover {
+  color: #ff7300;
+  transition: color 0.3s ease;
 }
