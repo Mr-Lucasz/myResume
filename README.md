@@ -1,68 +1,69 @@
 # Lucas Rodrigues | Portfólio
 
-Bem-vindo ao meu portfólio! Este projeto foi desenvolvido utilizando React e Vite para criar uma experiência interativa e moderna.
+Bem-vindo ao meu portfólio! Este projeto foi desenvolvido utilizando **React** e **Vite** para criar uma experiência interativa, moderna e responsiva. Aqui, você encontrará informações sobre minhas habilidades, experiências, projetos e formas de contato.
 
-## Visão Geral
+---
 
-Este portfólio apresenta minhas habilidades, experiências, projetos e formas de contato. Ele foi projetado para ser responsivo e visualmente atraente, utilizando animações e efeitos modernos.
+## 🚀 Visão Geral
 
-## Tecnologias Utilizadas
+Este portfólio foi projetado para ser visualmente atraente e funcional, com animações suaves, efeitos modernos e uma navegação intuitiva. Ele reflete minha paixão por desenvolvimento front-end e design de interfaces, além de destacar minhas competências técnicas e criativas.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
 
 - **React**: Biblioteca JavaScript para construção de interfaces de usuário.
-- **Vite**: Ferramenta de build rápida para projetos web modernos.
-- **Three.js**: Biblioteca JavaScript para renderização 3D.
-- **Lottie**: Biblioteca para animações baseadas em JSON.
-- **Framer Motion**: Biblioteca para animações e gestos.
-- **Styled Components**: Biblioteca para estilização de componentes.
-- **React Router**: Biblioteca para roteamento em aplicações React.
-- **React Scroll**: Biblioteca para navegação suave entre seções.
+- **Vite**: Ferramenta de build rápida e eficiente para projetos web modernos.
+- **Three.js**: Biblioteca para renderização 3D no navegador.
+- **Lottie**: Integração de animações baseadas em JSON.
+- **Framer Motion**: Biblioteca para animações e interações fluidas.
+- **Styled Components**: Estilização de componentes com CSS-in-JS.
+- **React Router**: Gerenciamento de rotas na aplicação.
+- **React Scroll**: Navegação suave entre seções da página.
 
-## Estrutura do Projeto
+---
 
-- **`.eslintrc.cjs`**: Configurações do ESLint para padronização de código.
-- **`.gitignore`**: Arquivo que define quais arquivos/diretórios devem ser ignorados pelo Git.
+## 📂 Estrutura do Projeto
+
+O projeto está organizado da seguinte forma:
+
+### Configurações e Arquivos Principais
+- **`.eslintrc.cjs`**: Configurações do ESLint para padronização do código.
+- **`.gitignore`**: Define arquivos e diretórios ignorados pelo Git.
 - **`index.html`**: Ponto de entrada da aplicação.
-- **`package.json`**: Contém as dependências e scripts do projeto.
-- **`public/`**: Diretório para arquivos estáticos públicos.
-- **`vite.svg`**: Ícone ou logo relacionado ao Vite.
-- **`README.md`**: Documentação do projeto.
-- **`src/`**: Diretório principal do código-fonte.
+- **`package.json`**: Lista de dependências e scripts do projeto.
+- **`vite.config.js`**: Configurações do Vite.
+
+### Diretórios e Arquivos
+- **`public/`**: Arquivos estáticos públicos.
+  - **`vite.svg`**: Ícone relacionado ao Vite.
+- **`src/`**: Código-fonte principal.
   - **`App.jsx`**: Componente principal da aplicação.
   - **`App.module.css`**: Estilos do componente `App`.
-  - **`assets/`**: Diretório para arquivos de mídia e dados estáticos.
+  - **`assets/`**: Arquivos de mídia e dados estáticos.
     - **`AboutMe.json`**: Dados sobre o usuário.
-    - **`lensflare0.png`**, **`lensflare3.png`**: Imagens de efeitos visuais.
+    - **`lensflare0.png`**, **`lensflare3.png`**: Imagens para efeitos visuais.
     - **`logotipo-lucas-rodrigues.svg`**: Logo do projeto.
     - **`welcome.mp4`**: Vídeo de boas-vindas.
   - **`components/`**: Componentes reutilizáveis.
-    - **`Background.jsx`**: Componente de fundo.
-    - **`Background.module.css`**: Estilos do fundo.
-    - **`Button.jsx`**: Componente de botão.
-    - **`Button.module.css`**: Estilos do botão.
-    - **`LoadingScreen.jsx`**: Tela de carregamento.
+    - **`Background.jsx`**: Fundo animado com Three.js.
+    - **`Button.jsx`**: Componente de botão personalizado.
+    - **`LoadingScreen.jsx`**: Tela de carregamento com vídeo.
     - **`TopNavigation/`**: Componentes de navegação superior.
-      - **`Header.jsx`**: Cabeçalho.
-      - **`Header.module.css`**: Estilos do cabeçalho.
-      - **`Navbar.jsx`**: Barra de navegação.
-      - **`Navbar.module.css`**: Estilos da barra de navegação.
+      - **`Header.jsx`**: Cabeçalho com logotipo.
+      - **`Navbar.jsx`**: Barra de navegação com links.
   - **`Global.jsx`**: Configurações globais.
   - **`Global.module.css`**: Estilos globais.
   - **`pages/`**: Páginas da aplicação.
     - **`Main.jsx`**: Página principal.
-    - **`Main.module.css`**: Estilos da página principal.
   - **`sections/`**: Seções da aplicação.
     - **`AboutMe.jsx`**: Seção "Sobre Mim".
-    - **`AboutMe.module.css`**: Estilos da seção "Sobre Mim".
-    - **`Contact.jsx`**: Seção de contato.
-    - **`Contact.module.css`**: Estilos da seção de contato.
-    - **`Experiences.jsx`**: Seção de experiências.
-    - **`Experiences.module.css`**: Estilos da seção de experiências.
-    - **`Projects.jsx`**: Seção de projetos.
-    - **`Projects.module.css`**: Estilos da seção de projetos.
-    - **`Skills.jsx`**: Seção de habilidades.
-    - **`Skills.module.css`**: Estilos da seção de habilidades.
-- **`vite.config.js`**: Configurações do Vite para o projeto.
+    - **`Contact.jsx`**: Seção de contato com formulário.
+    - **`Experiences.jsx`**: Seção de experiências profissionais.
+    - **`Projects.jsx`**: Seção de projetos realizados.
+    - **`Skills.jsx`**: Seção de habilidades técnicas.
 
+---
 
 ## Como Executar o Projeto
 
@@ -83,3 +84,28 @@ Este portfólio apresenta minhas habilidades, experiências, projetos e formas d
    ```sh
    http://localhost:3000
    ```
+
+## 📜 Scripts Disponíveis
+- `npm run dev`: Inicia o servidor de desenvolvimento.  
+- `npm run build`: Gera uma versão otimizada para produção.  
+- `npm run lint`: Executa o ESLint para verificar problemas no código.  
+- `npm run preview`: Visualiza a versão de produção localmente.
+
+## 🧩 Componentes Principais
+- **Background**: Renderiza um fundo animado utilizando Three.js.  
+- **Button**: Botão reutilizável com estilos personalizados.  
+- **LoadingScreen**: Tela de carregamento com vídeo de boas-vindas.  
+- **Header**: Cabeçalho com logotipo e navegação.  
+- **Navbar**: Barra de navegação com links para as seções da página.
+
+## 📌 Seções do Portfólio
+- **AboutMe**: Apresenta informações sobre mim, com animações Lottie e texto dinâmico.  
+- **Experiences**: Detalha minhas experiências profissionais.  
+- **Skills**: Lista minhas habilidades técnicas.  
+- **Projects**: Mostra projetos que desenvolvi, com descrições e links.  
+- **Contact**: Inclui um formulário de contato para facilitar a comunicação.
+
+## 📬 Contato
+Se você deseja entrar em contato, fique à vontade para enviar um e-mail para [l.cunha14.lc@gmail.com](mailto:l.cunha14.lc@gmail.com). Adoraria conversar sobre oportunidades de colaboração ou projetos!
+
+*Feito com ❤️ por Lucas Rodrigues.*
