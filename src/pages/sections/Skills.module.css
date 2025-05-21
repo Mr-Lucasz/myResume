@@ -104,47 +104,6 @@
   gap: 1.5rem;
 }
 
-/* Skill Bar Styles */
-.skillBarContainer {
-  width: 100%;
-}
-
-.skillInfo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
-.skillIcon {
-  font-size: 1.2rem;
-}
-
-.skillName {
-  flex-grow: 1;
-  margin-left: 0.5rem;
-  color: #fff;
-  font-weight: 500;
-}
-
-.skillPercent {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.9rem;
-}
-
-.skillBarBackground {
-  width: 100%;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.skillBarFill {
-  height: 100%;
-  border-radius: 4px;
-}
-
 /* Radial Skill Styles */
 .radialSkillsContainer {
   display: grid;
@@ -203,31 +162,6 @@
   gap: 0.8rem;
 }
 
-.softSkillPill {
-  padding: 0.6rem 1rem;
-  border-radius: 50px;
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.3s ease;
-  cursor: default;
-}
-
-.skillLevelIndicator {
-  display: flex;
-  gap: 0.2rem;
-}
-
-.levelDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #fff;
-}
-
 /* Certifications Styles */
 .certifications {
   grid-column: 1 / -1;
@@ -237,45 +171,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
-}
-
-.certCard {
-  background: rgba(255, 255, 255, 0.271);
-  border-radius: 0.8rem;
-  padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.certCard::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(to bottom, #c10b6f63, #0bc1a8);
-}
-
-.certBadge {
-  font-size: 1.8rem;
-  margin-bottom: 0.8rem;
-}
-
-.certName {
-  font-size: 1rem;
-  color: #fff;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.certMeta {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.7);
 }
 
 @media screen and (max-width: 768px) {
@@ -299,4 +194,30 @@
     font-size: 1.3rem;
   }
 }
+
+.radarChartContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.certLink {
+  padding-top: 1rem;
+}
+
+.certLink a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.certLink a:hover {
+  color: #c10b6f;
+  text-decoration: underline;
+}
+
+
 
