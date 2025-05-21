@@ -1,0 +1,23 @@
+/* SoftSkillPill.module.css */
+.softSkillPill {
+  padding: 0.6rem 1rem;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+.skillLevelIndicator {
+  display: flex;
+  gap: 0.2rem;
+}
+.levelDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+}

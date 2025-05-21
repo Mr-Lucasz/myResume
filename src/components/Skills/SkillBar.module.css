@@ -1,0 +1,34 @@
+/* SkillBar.module.css */
+.skillBarContainer {
+  width: 100%;
+}
+.skillInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.skillIcon {
+  font-size: 1.2rem;
+}
+.skillName {
+  flex-grow: 1;
+  margin-left: 0.5rem;
+  color: #fff;
+  font-weight: 500;
+}
+.skillPercent {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+.skillBarBackground {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.skillBarFill {
+  height: 100%;
+  border-radius: 4px;
+}

@@ -1,0 +1,43 @@
+export const skillsData = {
+  qaTechnical: [
+    { name: "Cypress (BDD/TDD)", level: 90, icon: "🔍" },
+    { name: "API Testing (REST)", level: 88, icon: "🔌" },
+    { name: "K6 (Performance)", level: 80, icon: "⚡" },
+    { name: "Selenium WebDriver", level: 75, icon: "🤖" },
+    { name: "Postman/ApiDog", level: 85, icon: "📬" },
+    { name: "Zephyr Scale", level: 78, icon: "📊" },
+    { name: "Jira", level: 80, icon: "🗂️" },
+  ],
+  programming: [
+    { name: "JavaScript/TS", level: 85, icon: "📜" },
+    { name: "Java", level: 70, icon: "☕" },
+    { name: "SQL", level: 80, icon: "🗃️" },
+    { name: "Node.js", level: 75, icon: "🟢" },
+    { name: "React (Testing)", level: 65, icon: "⚛️" },
+    { name: "Git", level: 90, icon: "🐙" },
+    { name: "Azure DevOps", level: 85, icon: "☁️" },
+  ],
+  qaProcess: [
+    { name: "Test Strategy", level: 92, icon: "🧠" },
+    { name: "Agile QA", level: 90, icon: "🔄" },
+    { name: "CI/CD Pipelines", level: 85, icon: "⚙️" },
+    { name: "Shift-Left", level: 88, icon: "⬅️" },
+    { name: "Risk Analysis", level: 86, icon: "⚠️" },
+    { name: "Root Cause", level: 91, icon: "🔎" },
+  ],
+  leadership: [
+    { name: "QA Mentoring", level: 89 },
+    { name: "Stakeholder Mgmt", level: 85 },
+    { name: "Process Improvement", level: 87 },
+    { name: "Quality Advocacy", level: 90 },
+    { name: "Team Collaboration", level: 88 },
+    { name: "Conflict Resolution", level: 84 },
+    { name: "Agile Coaching", level: 86 },
+  ],
+  certifications: [
+    { name: "ISTQB Advanced", issuer: "ISTQB", year: "2024" },
+    { name: "Postman API Expert", issuer: "Postman", year: "2023" },
+    { name: "Performance Testing with K6", issuer: "Udemy", year: "2023" },
+    { name: "BDD with Cucumber", issuer: "QASkills", year: "2022" },
+  ],
+};

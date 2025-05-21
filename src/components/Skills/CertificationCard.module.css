@@ -1,0 +1,35 @@
+/* CertificationCard.module.css */
+.certCard {
+  background: rgba(255, 255, 255, 0.271);
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.certCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #c10b6f63, #0bc1a8);
+}
+.certBadge {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+.certName {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.certMeta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
