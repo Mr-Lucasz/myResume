@@ -19,7 +19,7 @@ export const experienceData = [
       "Mentoria e suporte técnico para profissionais de QA Pleno e Júnior.",
       "Colaboração ativa em iniciativas de melhoria contínua dos processos de qualidade e cultura ágil."
     ],
-    skills: ["Cypress", "K6", "Postman", "CI/CD", "Mentoria", "OKRs"]
+    skills: ["Cypress", "K6", "Postman", "CI/CD", "Mentoria", "OKRs", "Mobile Testing"]
   },
   {
     company: "IATEC",
@@ -35,7 +35,7 @@ export const experienceData = [
       "Colaboração direta com times de desenvolvimento para antecipação de falhas e melhoria contínua.",
       "Participação em cerimônias ágeis, garantindo alinhamento entre qualidade e entrega."
     ],
-    skills: ["Selenium", "Jenkins", "CI/CD", "Análise de Defeitos", "Scrum"]
+    skills: ["CI/CD", "Análise de Defeitos", "Scrum", "Manual Testing", "Report Defects"]
   },
   {
     company: "BEES Brasil",
@@ -51,7 +51,7 @@ export const experienceData = [
       "Planejamento e execução de testes manuais e automatizados.",
       "Testes de performance com K6 e testes de dispositivos móveis."
     ],
-    skills: ["Cypress", "Cucumber", "Postman", "Azure DevOps", "K6", "Jira"]
+    skills: ["Cypress", "Cucumber", "Postman", "Azure DevOps", "K6", "Jira", "Mobile Testing", "Web Testing",]
   },
   {
     company: "Cognyte",
@@ -67,7 +67,7 @@ export const experienceData = [
       "Análise de requisitos e mapeamento de cenários.",
       "Cobertura de qualidade em metodologias ágeis."
     ],
-    skills: ["Testes Funcionais", "Automação", "Kanban", "SQL", "Testes Ágeis"]
+    skills: ["Testes Funcionais", "Automação", "Kanban", "SQL", "Testes Ágeis", "Scrum", "Gitlab"]
   },
   {
     company: "YOUDevelop",
@@ -81,6 +81,6 @@ export const experienceData = [
       "Acompanhamento do desenvolvimento e lançamento de produtos.",
       "Garantia de entregas contínuas de valor e alinhamento com objetivos organizacionais."
     ],
-    skills: ["Kanban", "Planejamento", "Gestão de Backlog", "Stakeholder Engagement"]
+  skills: ["Kanban", "Planejamento", "Gestão de Backlog", "Stakeholder Engagement", "Qualidade", "Testes"]
   }
 ];
