@@ -1,0 +1,15 @@
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw; /* Garante que o contêiner ocupe toda a largura da janela */
+  height: 100vh; /* Garante que o contêiner ocupe toda a altura da janela */
+  background-color: black; /* Fundo preto para o vídeo */
+  overflow: hidden; /* Evita que o vídeo ultrapasse os limites */
+}
+
+.video {
+  width: 100vw; /* Faz o vídeo ocupar toda a largura */
+  height: 100vh; /* Faz o vídeo ocupar toda a altura */
+  object-fit: cover; /* Ajusta o vídeo para cobrir a tela sem distorção */
+}

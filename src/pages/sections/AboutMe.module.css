@@ -56,7 +56,7 @@
   padding: 1rem;
   border: none;
   outline: none;
-  color: #fff;
+  color: #000000;
   background: #111111;
   cursor: pointer;
   position: relative;
@@ -72,12 +72,12 @@
   content: "";
   background: linear-gradient(
     45deg,
-    #daddd9,
-    #dddddd,
-    #015808,
-    #424242,
-    #125a12b7,
-    #093b03
+    #a6a6a6,
+    #b4b4b4,
+    #004606,
+    #191919,
+    #092c09b7,
+    #031701
   );
   position: absolute;
   top: -2px;
@@ -94,7 +94,7 @@
 }
 
 .playButton:active {
-  color: #eeeeee;
+  color: #c7c6c6;
 }
 
 .playButton:active:after {
@@ -111,7 +111,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #002b0675;
+  background: #ffffff;
   left: 0;
   top: 0;
   border-radius: 10px;

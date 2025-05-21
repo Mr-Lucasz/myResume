@@ -1,0 +1,75 @@
+/* ExperienceTimeline.module.css */
+.timelineContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 2rem 0;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, 
+    rgba(193, 11, 111, 0.6) 0%, 
+    rgba(11, 193, 168, 0.6) 100%);
+  border-radius: 2px;
+}
+
+.timelineItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.timelineDot {
+  width: 14px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #c10b6f;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+}
+
+.timelineItem:hover .timelineDot {
+  background: rgba(193, 11, 111, 0.8);
+  transform: translateX(-50%) scale(1.2);
+}
+
+.timelineItem:nth-child(even) .timelineDot {
+  border-color: #0bc1a8;
+}
+
+.timelineItem:nth-child(even):hover .timelineDot {
+  background: rgba(11, 193, 168, 0.8);
+}
+
+.timelineItem:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline {
+    padding-left: 1.5rem;
+  }
+  
+  .timelineDot {
+    width: 12px;
+    height: 12px;
+  }
+}

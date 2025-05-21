@@ -1,0 +1,167 @@
+/* ExperienceItem.module.css */
+.item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Remova o padding para a imagem ocupar todo o espaço */
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Troque para cover para preencher todo o espaço */
+  border-radius: 50%;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+}
+
+.card {
+  background: rgba(30, 30, 30, 0.6);
+  padding: 2rem;
+  border-radius: 1rem;
+  flex: 1;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, #c10b6f, #0bc1a8);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  background: rgba(40, 40, 40, 0.7);
+}
+
+.cardHeader {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 600;
+  background: linear-gradient(90deg, #c10b6f 0%, #0bc1a8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.company {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #bbb;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.period {
+  font-size: 0.9rem;
+  color: #888;
+  display: block;
+}
+
+.description {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+  list-style: none;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.description li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.description li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #c10b6f;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.badge {
+  background: rgba(193, 11, 111, 0.15);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: #fff;
+  font-weight: 500;
+  border: 1px solid rgba(193, 11, 111, 0.3);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.badge:hover {
+  background: rgba(193, 11, 111, 0.3);
+  transform: translateY(-2px);
+}
+
+@media screen and (max-width: 768px) {
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .logo {
+    width: 70px;
+    height: 70px;
+    margin-left: -0.5rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+  }
+  
+  .badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

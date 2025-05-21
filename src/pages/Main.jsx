@@ -11,9 +11,8 @@ import styles from "./Main.module.css";
 import AnimatedCursor from "react-animated-cursor";
 
 export function Main() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [showContent, setShowContent] = useState(true);
-
+  const [isLoading, setIsLoading] = useState(true); 
+  const [showContent, setShowContent] = useState(false); 
   const handleStartClick = () => {
     setIsLoading(true);
   };

@@ -1,3 +1,84 @@
-.sectionExperiences{
-    transition: opacity 0.3s ease;  
+/* Experiences.module.css */
+.sectionExperiences {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.426) 0%, rgba(8, 8, 10, 0.95) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.sectionExperiences::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(193, 11, 111, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(11, 193, 168, 0.1) 0%, transparent 40%);
+  z-index: 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-weight: 700;
+  background: linear-gradient(90deg, #0bc1a8 10%, #e0d4db 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+}
+.title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.titleHighlight {
+  background: linear-gradient(90deg, #fef9fc 0%, #0bc1a8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+.titleHighlight::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #ffffff 0%, #0bc1a8 100%);
+  border-radius: 3px;
+}
+.subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
 }
