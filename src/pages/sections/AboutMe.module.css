@@ -1,183 +1,254 @@
-@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
-
+/* AboutMe.module.css */
 .sectionAbout {
+  min-height: 100vh;
   display: flex;
-  flex-direction: row;
-  transition: opacity 0.3s ease;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 2rem;
+   background: linear-gradient(135deg, rgba(0, 0, 0, 0.426) 0%, rgba(8, 8, 10, 0.95) 100%);
 }
 
-.sectionAbout a {
-  transition: all 0.3s ease-out;
+.backgroundPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(28, 22, 26, 0.1) 0%, transparent 30%),
+    radial-gradient(circle at 90% 80%, rgba(17, 27, 25, 0.1) 0%, transparent 30%);
+  z-index: 0;
 }
 
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 4rem;
-  flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
   width: 100%;
-  padding: 1rem;
-  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
-
-
 
 .aside {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 1rem;
-  box-sizing: border-box;
 }
 
-
-
 .aside2 {
+  flex: 1;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.gradientText {
+  background: linear-gradient(90deg, #ffffff, #c10b6f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.nameHighlight {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  background: linear-gradient(90deg, #c10b6f, #0bc1a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.nameHighlight::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
   width: 100%;
-  padding: 1rem;
-  box-sizing: border-box;
+  height: 3px;
+  background: linear-gradient(90deg, #c10b6f, #0bc1a8);
+  border-radius: 3px;
 }
 
 .subtitle {
-  font-family: "Righteous", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  min-height: 3rem;
 }
 
-.playButton {
-  width: 14rem;
-  height: 4rem;
-  font-size: 1.75rem;
-  padding: 1rem;
-  border: none;
-  outline: none;
-  color: #000000;
-  background: #111111;
-  cursor: pointer;
+.description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.contactButton {
   position: relative;
-  z-index: 0;
-  border-radius: 10px;
-  margin-top: 3.5rem;
-  box-sizing: border-box;
-  font-family: "Righteous", sans-serif;
-  /* pulse button */
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #c10b6f, #0bc1a8);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease;
 }
 
-.playButton:before {
-  content: "";
-  background: linear-gradient(
-    45deg,
-    #a6a6a6,
-    #b4b4b4,
-    #004606,
-    #191919,
-    #092c09b7,
-    #031701
-  );
+.buttonHoverEffect {
   position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowing 20s linear infinite;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #0bc1a8, #c10b6f);
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
+  z-index: -1;
+  transition: opacity 0.3s ease;
 }
 
-.playButton:active {
-  color: #c7c6c6;
-}
-
-.playButton:active:after {
-  background: transparent;
-}
-
-.playButton:hover:before {
+.contactButton:hover .buttonHoverEffect {
   opacity: 1;
 }
 
-.playButton:after {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #ffffff;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
+.projectsButton {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-@keyframes glowing {
+.projectsButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.animationContainer {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.lottieAnimation {
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+}
+
+.animationGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(58, 55, 57, 0.3) 0%, transparent 70%);
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.5rem;
+}
+
+.glitchText {
+  transition: all 0.3s ease;
+}
+
+.glitchText:hover {
+  animation: glitch 0.5s linear infinite;
+}
+
+@keyframes glitch {
   0% {
-    background-position: 0 0;
+    text-shadow: 2px 0 0 #cec3c9, -2px 0 0 #0bc1a8;
+  }
+  25% {
+    text-shadow: -2px 0 0 #dfd7db, 2px 0 0 #0bc1a8;
   }
   50% {
-    background-position: 400% 0;
+    text-shadow: 2px 0 0 #ddd6da, -2px 0 0 #0bc1a8;
+  }
+  75% {
+    text-shadow: -2px 0 0 #ddd1d8, 2px 0 0 #0bc1a8;
   }
   100% {
-    background-position: 0 0;
+    text-shadow: 2px 0 0 #e7e0e4, -2px 0 0 #0bc1a8;
   }
-}
-
-.playButton:hover {
-  transform: scale(1.5);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.playButton:focus {
-  outline: none;
-}
-
-
-.aside h2{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  font-weight:900; 
-  color: #fff;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  padding: 0 1rem;
 }
 
 @media screen and (max-width: 768px) {
   .container {
-    flex-direction: column-reverse;
-    gap: 1rem;
-  }
-  .aside h2 {
-    font-size: 1rem;
-  }
-  .glitchText {
-    font-size: 50%;
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
   }
   
+  .nameHighlight {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .buttonContainer {
+    justify-content: center;
+  }
+  
+  .animationContainer {
+    max-width: 300px;
+  }
 }
 
-.glitchText {
-  position: relative;
-  color: #fff;
-  transition: text-shadow 0.3s ease-in-out;
-}
-
-.glitchText:hover {
-  text-shadow: 
-    -2px 2px 0 red,
-    2px -2px 0 blue,
-    -2px 2px 0 green,
-    2px -2px 0 yellow;
-/* scale */
-  transform: scale(1.1);
-
+@media screen and (max-width: 480px) {
+  .buttonContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .contactButton, .projectsButton {
+    width: 100%;
+  }
 }

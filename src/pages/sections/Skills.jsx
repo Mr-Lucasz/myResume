@@ -2,34 +2,43 @@ import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import styles from "./Skills.module.css";
 
-// Dados de exemplo - substitua com seus dados reais
 const skillsData = {
-  technical: [
-    { name: "React", level: 90, icon: "⚛️" },
-    { name: "JavaScript", level: 95, icon: "📜" },
-    { name: "TypeScript", level: 85, icon: "🟦" },
-    { name: "HTML/CSS", level: 98, icon: "🎨" },
-    { name: "Node.js", level: 80, icon: "🟢" },
-    { name: "Git", level: 90, icon: "🐙" },
+  qaTechnical: [
+    { name: "Cypress (BDD/TDD)", level: 90, icon: "🔍" },
+    { name: "API Testing (REST)", level: 88, icon: "🔌" },
+    { name: "K6 (Performance)", level: 80, icon: "⚡" },
+    { name: "Selenium WebDriver", level: 75, icon: "🤖" },
+    { name: "Postman/Newman", level: 85, icon: "📬" },
+    { name: "Zephyr Scale", level: 78, icon: "📊" }
   ],
-  testing: [
-    { name: "Cypress", level: 85, icon: "🔍" },
-    { name: "Selenium", level: 75, icon: "🤖" },
-    { name: "K6", level: 70, icon: "⚡" },
-    { name: "JMeter", level: 65, icon: "📊" },
-    { name: "TestCafe", level: 60, icon: "☕" },
+  programming: [
+    { name: "JavaScript/TS", level: 85, icon: "📜" },
+    { name: "Java", level: 70, icon: "☕" },
+    { name: "SQL", level: 80, icon: "🗃️" },
+    { name: "Node.js", level: 75, icon: "🟢" },
+    { name: "React (Testing)", level: 65, icon: "⚛️" },
+    { name: "Git", level: 90, icon: "🐙" }
   ],
-  soft: [
-    { name: "Trabalho em Equipe", level: 95 },
-    { name: "Comunicação", level: 90 },
-    { name: "Resolução de Problemas", level: 92 },
-    { name: "Gestão de Tempo", level: 88 },
+  qaProcess: [
+    { name: "Test Strategy", level: 92, icon: "🧠" },
+    { name: "Agile QA", level: 90, icon: "🔄" },
+    { name: "CI/CD Pipelines", level: 85, icon: "⚙️" },
+    { name: "Shift-Left", level: 88, icon: "⬅️" },
+    { name: "Risk Analysis", level: 86, icon: "⚠️" },
+    { name: "Root Cause", level: 91, icon: "🔎" }
+  ],
+  leadership: [
+    { name: "QA Mentoring", level: 89 },
+    { name: "Stakeholder Mgmt", level: 85 },
+    { name: "Process Improvement", level: 87 },
+    { name: "Quality Advocacy", level: 90 }
   ],
   certifications: [
-    { name: "Accredited Software Testing (ASTFC)", issuer: "Canvas Credentials", year: "2024" },
+    { name: "ISTQB Advanced (Em andamento)", issuer: "ISTQB", year: "2024" },
     { name: "Postman API Expert", issuer: "Postman", year: "2023" },
     { name: "Performance Testing with K6", issuer: "Udemy", year: "2023" },
-    { name: "Selenium WebDriver", issuer: "QASkills", year: "2022" },
+    { name: "Azure DevOps Pipelines", issuer: "Microsoft", year: "2023" },
+    { name: "BDD with Cucumber", issuer: "QASkills", year: "2022" }
   ]
 };
 
@@ -52,7 +61,7 @@ export function Skills() {
           transition={{ delay: 0.3 }}
           className={styles.title}
         >
-          My <span className={styles.highlight}>Skills</span> Dashboard
+          QA <span className={styles.highlight}>Expertise</span> Matrix
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
@@ -60,12 +69,12 @@ export function Skills() {
           transition={{ delay: 0.5 }}
           className={styles.subtitle}
         >
-          Technical expertise and professional competencies visualized
+          Senior QA competencies visualized through technical depth and quality leadership
         </motion.p>
       </div>
 
       <div className={styles.dashboard}>
-        {/* Seção de Skills Técnicas */}
+        {/* Seção de Test Automation */}
         <motion.div 
           className={styles.skillCategory}
           initial={{ opacity: 0, x: -20 }}
@@ -73,16 +82,16 @@ export function Skills() {
           transition={{ delay: 0.4 }}
         >
           <h3 className={styles.categoryTitle}>
-            <span className={styles.techIcon}>💻</span> Technical Skills
+            <span className={styles.testIcon}>🤖</span> Test Automation
           </h3>
           <div className={styles.skillsGrid}>
-            {skillsData.technical.map((skill, index) => (
+            {skillsData.qaTechnical.map((skill, index) => (
               <SkillBar key={index} skill={skill} delay={index * 0.1} />
             ))}
           </div>
         </motion.div>
 
-        {/* Seção de Testing */}
+        {/* Seção de Technical Skills */}
         <motion.div 
           className={styles.skillCategory}
           initial={{ opacity: 0, x: -20 }}
@@ -90,16 +99,16 @@ export function Skills() {
           transition={{ delay: 0.6 }}
         >
           <h3 className={styles.categoryTitle}>
-            <span className={styles.testIcon}>🧪</span> Testing Expertise
+            <span className={styles.techIcon}>💻</span> Technical Stack
           </h3>
           <div className={styles.skillsGrid}>
-            {skillsData.testing.map((skill, index) => (
+            {skillsData.programming.map((skill, index) => (
               <RadialSkill key={index} skill={skill} delay={index * 0.1} />
             ))}
           </div>
         </motion.div>
 
-        {/* Seção de Soft Skills */}
+        {/* Seção de QA Process */}
         <motion.div 
           className={styles.skillCategory}
           initial={{ opacity: 0, x: -20 }}
@@ -107,11 +116,28 @@ export function Skills() {
           transition={{ delay: 0.8 }}
         >
           <h3 className={styles.categoryTitle}>
-            <span className={styles.softIcon}>🧠</span> Professional Skills
+            <span className={styles.qaIcon}>🛠️</span> QA Methodology
+          </h3>
+          <div className={styles.skillsGrid}>
+            {skillsData.qaProcess.map((skill, index) => (
+              <SkillBar key={index} skill={skill} delay={index * 0.1} />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Seção de Leadership */}
+        <motion.div 
+          className={styles.skillCategory}
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 1 }}
+        >
+          <h3 className={styles.categoryTitle}>
+            <span className={styles.leadIcon}>🚀</span> QA Leadership
           </h3>
           <div className={styles.softSkillsContainer}>
-            {skillsData.soft.map((skill, index) => (
-              <SoftSkillPill key={index} skill={skill} delay={index * 0.1} />
+            {skillsData.leadership.map((skill, index) => (
+              <SoftSkillPill key={index} skill={skill} delay={index * 0.15} />
             ))}
           </div>
         </motion.div>
@@ -121,7 +147,7 @@ export function Skills() {
           className={styles.certifications}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 1 }}
+          transition={{ delay: 1.2 }}
         >
           <h3 className={styles.categoryTitle}>
             <span className={styles.certIcon}>🏆</span> Certifications
@@ -136,6 +162,7 @@ export function Skills() {
     </motion.section>
   );
 }
+
 
 // Componente de Barra de Skill
 function SkillBar({ skill, delay }) {
