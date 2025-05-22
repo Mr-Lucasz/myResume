@@ -9,11 +9,14 @@
 }
 
 body {
+  /* Remova o display: flex e place-items */
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
+  background: #1a1919; /* Ou seu gradiente global */
+  overflow-x: hidden;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+
 
 p {
   display: flex;
@@ -55,4 +58,10 @@ html {
 
 main {
   scroll-padding-top: 6rem; /* Ajuste para a altura do seu cabeçalho */
+}
+
+html, body, #root {
+  height: 100%;
+  min-height: 100vh;
+  width: 100vw;
 }
