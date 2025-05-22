@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { Main } from "./pages/Main";
-import "./App.module.css";
+import "./App.css";
 
 
 
