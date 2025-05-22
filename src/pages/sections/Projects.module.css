@@ -1,6 +1,6 @@
 /* Projects.module.css */
 .projectsSection {
-  padding: 6rem 2rem;
+  padding: 2rem 2rem;
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.426) 0%, rgba(8, 8, 10, 0.95) 100%);
   position: relative;
   overflow: hidden;
@@ -21,7 +21,7 @@
 
 .header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
   position: relative;
   z-index: 1;
 }

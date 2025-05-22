@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Background } from "../components/Background";
 import { Header } from "../components/TopNavigation/Header";
 import { LoadingScreen } from "../components/LoadingScreen";
@@ -11,8 +11,10 @@ import styles from "./Main.module.css";
 import AnimatedCursor from "react-animated-cursor";
 
 export function Main() {
-  const [isLoading, setIsLoading] = useState(true); 
-  const [showContent, setShowContent] = useState(false); 
+  const [isLoading, setIsLoading] = useState(false);
+  const [showContent, setShowContent] = useState(false);
+  const videoRef = useRef(null);
+  
   const handleStartClick = () => {
     setIsLoading(true);
   };
@@ -22,8 +24,13 @@ export function Main() {
     setShowContent(true);
   };
 
-  if (isLoading) {
-    return <LoadingScreen onVideoEnd={handleVideoEnd} />;
+  if (isLoading && !showContent) {
+    return (
+      <LoadingScreen
+        onVideoEnd={handleVideoEnd}
+        videoRef={videoRef}
+      />
+    );
   }
 
   if (showContent) {
@@ -47,10 +54,20 @@ export function Main() {
   }
 
   // Tela inicial com o botão Start
-  return (
+ return (
     <div className={styles.playContainer}>
       <AnimatedCursor color="193, 11, 111" />
-      <button className={styles.playButton} onClick={handleStartClick}>
+      <button
+        className={styles.playButton}
+        onClick={() => {
+          handleStartClick();
+          setTimeout(() => {
+            if (videoRef.current) {
+              videoRef.current.play();
+            }
+          }, 100); // Pequeno delay para garantir montagem
+        }}
+      >
         PLAY
       </button>
     </div>

@@ -18,9 +18,9 @@ export function Skills() {
         label: "Technical Stack",
         data: skillsData.programming.map((skill) => skill.level),
         backgroundColor: "rgba(193, 11, 111, 0.2)",
-        borderColor: "rgba(193, 11, 111, 1)",
+        borderColor: "#ff70d9", // Linha mais clara
         borderWidth: 2,
-        pointBackgroundColor: "rgba(193, 11, 111, 1)",
+        pointBackgroundColor: "#ff70d9", // Pontos mais claros também
       },
     ],
   };
@@ -34,12 +34,18 @@ export function Skills() {
         suggestedMin: 0,
         suggestedMax: 100,
         pointLabels: {
+          color: "#fff", // Nome dos KPIs mais visível
           font: {
-            size: 14,
+            size: 16,
             weight: "bold",
-            color: "#ffff",
-            backgroundColor: "rgba(193, 11, 111, 0.5)",
           },
+        },
+        grid: {
+          color: "rgba(255,255,255,0.2)", // Linhas da grade mais claras
+        },
+        ticks: {
+          color: "#fff", // Números do eixo mais visíveis
+          backdropColor: "transparent",
         },
       },
     },
