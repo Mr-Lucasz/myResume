@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-synthesis: none;
@@ -8,11 +14,22 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+html, body, #root {
+  height: 100%;
+  min-height: 100vh;
+  width: 100vw;
   margin: 0;
-  display: flex;
-  place-items: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 !important;
   min-width: 320px;
+  background: #1a1919;
+  overflow-x: hidden;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* Remova display: flex e place-items */
 }
 
 p {
@@ -54,5 +71,5 @@ html {
 }
 
 main {
-  scroll-padding-top: 6rem; /* Ajuste para a altura do seu cabeçalho */
+  scroll-padding-top: 6rem;
 }
