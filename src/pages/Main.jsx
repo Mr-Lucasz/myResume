@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Background } from "../components/Background";
 import { Header } from "../components/TopNavigation/Header";
 import { LoadingScreen } from "../components/LoadingScreen";
@@ -9,18 +9,15 @@ import { Projects } from "./sections/Projects";
 import { Contact } from "./sections/Contact";
 import styles from "./Main.module.css";
 import AnimatedCursor from "react-animated-cursor";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 export function Main() {
   const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
   const [showContent, setShowContent] = useState(false);
   const videoRef = useRef(null);
-  
-  const handleStartClick = () => {
-    setIsLoading(true);
-  };
 
+  const handleStartClick = () => setIsLoading(true);
   const handleVideoEnd = () => {
     setIsLoading(false);
     setShowContent(true);
@@ -28,10 +25,7 @@ export function Main() {
 
   if (isLoading && !showContent) {
     return (
-      <LoadingScreen
-        onVideoEnd={handleVideoEnd}
-        videoRef={videoRef}
-      />
+      <LoadingScreen onVideoEnd={handleVideoEnd} videoRef={videoRef} />
     );
   }
 
@@ -43,8 +37,7 @@ export function Main() {
           <AnimatedCursor color="193, 11, 111" />
           <Header />
           <main className={styles.mainContent}>
-            <h1>{t('welcome')}</h1>
-            {/* Renderize todas as seções diretamente aqui */}
+            <h1>{t("welcome")}</h1>
             <AboutMe />
             <Experiences />
             <Skills />
@@ -56,7 +49,6 @@ export function Main() {
     );
   }
 
-  // Tela inicial com o botão Start
   return (
     <div className={styles.playContainer}>
       <AnimatedCursor color="193, 11, 111" />
@@ -71,7 +63,7 @@ export function Main() {
           }, 100);
         }}
       >
-        {t('play_button')}
+        {t("play_button")}
       </button>
     </div>
   );
