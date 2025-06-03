@@ -1,12 +1,46 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./Header.module.css";
 import logotipo from "../../assets/logotipo-lucas-rodrigues.svg";
 import { Navbar } from "./Navbar";
-import { Button } from "../Button";
+import brFlag from "../../assets/flag-br.png";
+import usFlag from "../../assets/flag-us.png";
 
 export function Header() {
+  const { i18n, t } = useTranslation();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [transparency, setTransparency] = useState(0);
+  const [listOpen, setListOpen] = useState(false);
+  const languages = [
+    { code: "pt", label: "Português", flag: brFlag },
+    { code: "en", label: "English", flag: usFlag },
+  ];
+  const currentLang = languages.find((l) => l.code === i18n.language) || languages[0];
+
+  function handleListToggle() {
+    setListOpen((open) => !open);
+  }
+  function handleSelect(lang) {
+    if (lang !== i18n.language) {
+      i18n.changeLanguage(lang);
+    }
+    setListOpen(false);
+  }
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (!e.target.closest('.' + styles.languageListChoice)) {
+        setListOpen(false);
+      }
+    }
+    if (listOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [listOpen]);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -32,9 +66,7 @@ export function Header() {
   }, []);
 
   const logoStyle = {
-    transform: `translate(${mousePosition.x * 0.1}px, ${
-      mousePosition.y * 0.1
-    }px)`, // Efeito parallax
+    transform: `translate(${mousePosition.x * 0.1}px, ${mousePosition.y * 0.1}px)`, // Efeito parallax
   };
 
   const headerStyle = {
@@ -53,7 +85,39 @@ export function Header() {
         />
       </div>
       <Navbar />
-      <Button onClick={() => console.log("Cliquei!")}>Blog</Button>
+      <div
+        className={styles.languageListChoice + (listOpen ? ' ' + styles.open : '')}
+        tabIndex={0}
+        onBlur={() => setListOpen(false)}
+      >
+        <div
+          className={styles.languageListTitle}
+          onClick={handleListToggle}
+          aria-haspopup="listbox"
+          aria-expanded={listOpen}
+        >
+          <img src={currentLang.flag} alt={currentLang.label} className={styles.languageListFlag} />
+          {currentLang.label}
+        </div>
+        <div className={styles.languageListObjects} style={{ pointerEvents: listOpen ? 'auto' : 'none' }}>
+          {languages.map(lang => (
+            <label key={lang.code} className={styles.languageListLabel}>
+              <input
+                type="radio"
+                className={styles.languageListRadio}
+                name="language"
+                checked={i18n.language === lang.code}
+                onChange={() => handleSelect(lang.code)}
+                tabIndex={listOpen ? 0 : -1}
+              />
+              <span>
+                <img src={lang.flag} alt={lang.label} className={styles.languageListFlag} />
+                {lang.label}
+              </span>
+            </label>
+          ))}
+        </div>
+      </div>
     </header>
   );
 }

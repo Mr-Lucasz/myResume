@@ -4,8 +4,10 @@ import styles from "./AboutMe.module.css";
 import Lottie from "lottie-react";
 import animationData from "../../assets/AboutMe.json";
 import { TypeAnimation } from "react-type-animation";
+import { useTranslation } from 'react-i18next';
 
 export function AboutMe() {
+  const { t } = useTranslation();
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true
@@ -39,20 +41,20 @@ export function AboutMe() {
             className={styles.glitchText}
             whileHover={{ scale: 1.05 }}
           >
-            <span className={styles.gradientText}>Hello, I'm</span><br/>
+            <span className={styles.gradientText}>{t('about_hello')}</span><br/>
             <span className={styles.nameHighlight}>Lucas Rodrigues</span>
           </motion.h2>
 
           <TypeAnimation
             className={styles.subtitle}
             sequence={[
-              "Software Quality Analyst",
+              t('about_role1'),
               1500,
-              "QA Automation Engineer",
+              t('about_role2'),
               1500,
-              "Technology Enthusiast",
+              t('about_role3'),
               1500,
-              "Problem Solver",
+              t('about_role4'),
               1500
             ]}
             wrapper="h3"
@@ -61,10 +63,7 @@ export function AboutMe() {
           />
 
           <motion.p className={styles.description}>
-            With a passion for creating flawless digital experiences and ensuring 
-            software excellence through meticulous testing and automation. 
-            Combining technical expertise with creative problem-solving to 
-            deliver top-notch quality solutions.
+            {t('about_description')}
           </motion.p>
 
           <div className={styles.buttonContainer}>
@@ -74,7 +73,7 @@ export function AboutMe() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Let's Connect</span>
+              <span>{t('about_connect')}</span>
               <div className={styles.buttonHoverEffect}></div>
             </motion.button>
 
@@ -84,7 +83,7 @@ export function AboutMe() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              View My Work
+              {t('about_viewwork')}
             </motion.a>
           </div>
         </motion.aside>

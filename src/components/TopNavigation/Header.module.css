@@ -44,3 +44,212 @@
 .blur {
   filter: blur(5px);
 }
+.languageSelect {
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  border: 2px solid #c10b6f;
+  background: linear-gradient(90deg, #0bc1a8 0%, #c10b6f 100%);
+  color: #fff;
+  font-family: 'Righteous', sans-serif;
+  font-weight: 500;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 12px rgba(193, 11, 111, 0.08);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin-left: 1rem;
+}
+.languageSelect:focus, .languageSelect:hover {
+  border: 2px solid #0bc1a8;
+  box-shadow: 0 0 0 2px #0bc1a880;
+}
+.languageSelect option {
+  color: #111;
+  background: #fff;
+}
+.languageDropdown {
+  position: relative;
+  margin-left: 1rem;
+}
+.languageButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  border: 2px solid #c10b6f;
+  background: linear-gradient(90deg, #0bc1a8 0%, #c10b6f 100%);
+  color: #fff;
+  font-family: 'Righteous', sans-serif;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  transition: border 0.3s, box-shadow 0.3s, background 0.3s;
+  box-shadow: 0 2px 12px rgba(193, 11, 111, 0.08);
+  user-select: none;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.languageButton:hover, .languageButton:focus {
+  border: 2px solid #0bc1a8;
+  box-shadow: 0 0 0 2px #0bc1a880;
+  background: linear-gradient(90deg, #c10b6f 0%, #0bc1a8 100%);
+}
+.languageMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 140px;
+  background: #232323;
+  border: 2px solid #c10b6f;
+  border-top: none;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  z-index: 10;
+  display: none;
+  flex-direction: column;
+  animation: fadeIn 0.2s;
+}
+.languageDropdown.open .languageMenu {
+  display: flex;
+}
+.languageOption {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.05rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Righteous', sans-serif;
+  transition: background 0.2s, color 0.2s;
+}
+.languageOption:hover, .languageOption:focus {
+  background: #0bc1a8;
+  color: #232323;
+}
+.languageFlag {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 1px 4px #0002;
+}
+.languageArrow {
+  font-size: 1.1em;
+  margin-left: 0.2em;
+  transition: transform 0.2s;
+}
+.languageDropdown.open .languageArrow {
+  transform: rotate(180deg);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.languageListChoice {
+  width: 180px;
+  margin-left: 1.5rem;
+  position: relative;
+  cursor: pointer;
+  font-family: 'Righteous', 'Raleway', sans-serif;
+  z-index: 100;
+}
+.languageListTitle {
+  width: 100%;
+  background: linear-gradient(90deg, #0bc1a8 0%, #c10b6f 100%);
+  color: #fff;
+  text-align: center;
+  padding: 0.55em 1em;
+  box-sizing: border-box;
+  border-radius: 0.5em;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 12px rgba(193, 11, 111, 0.08);
+  user-select: none;
+  transition: border-radius 0.2s;
+}
+.languageListChoice.open .languageListTitle {
+  border-radius: 0.5em 0.5em 0 0;
+}
+.languageListObjects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 100%;
+  padding-top: 2.1em;
+  box-sizing: border-box;
+  overflow: hidden;
+  max-height: 0;
+  background: #232323;
+  border-radius: 0 0 0.5em 0.5em;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  transition: max-height 250ms ease;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+.languageListChoice.open .languageListObjects {
+  max-height: 300px;
+  width: 100%;
+  min-width: 100%;
+}
+.languageListObjects label:last-of-type span {
+  border-radius: 0 0 0.5em 0.5em;
+}
+.languageListRadio {
+  position: absolute;
+  left: -9999px;
+}
+.languageListLabel {
+  width: 100%;
+  display: block;
+}
+.languageListRadio + span {
+  color: #fff;
+  background: #232323;
+  padding: 0.55em 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.05rem;
+  font-family: 'Righteous', 'Raleway', sans-serif;
+  font-weight: 500;
+  border-bottom: 1px solid #333;
+  transition: background 0.2s, color 0.2s;
+}
+.languageListChoice.open .languageListRadio + span:hover {
+  background: #c10b6f;
+  color: #fff;
+}
+.languageListRadio:checked + span {
+  background: #0bc1a8;
+  color: #232323;
+  font-weight: 700;
+  border-radius: 0.5em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+.languageListFlag {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 1px 4px #0002;
+}

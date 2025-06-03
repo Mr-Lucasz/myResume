@@ -7,8 +7,10 @@ import { skillsData } from "../../data/skillsData"; // Assuming you have a separ
 import { SkillBar } from "../../components/Skills/SkillBar";
 import { SoftSkillPill } from "../../components/Skills/SoftSkillPill";
 import { CertificationCard } from "../../components/Skills/CertificationCard";
+import { useTranslation } from "react-i18next";
 
 export function Skills() {
+  const { t } = useTranslation();
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   const radarData = {
@@ -67,7 +69,7 @@ export function Skills() {
           transition={{ delay: 0.3 }}
           className={styles.title}
         >
-          QA <span className={styles.highlight}>Expertise</span> Matrix
+          {t("skills_title")}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
@@ -75,8 +77,7 @@ export function Skills() {
           transition={{ delay: 0.5 }}
           className={styles.subtitle}
         >
-          Senior QA competencies visualized through technical depth and quality
-          leadership
+          {t("skills_subtitle")}
         </motion.p>
       </div>
 
@@ -89,7 +90,8 @@ export function Skills() {
           transition={{ delay: 0.4 }}
         >
           <h3 className={styles.categoryTitle}>
-            <span className={styles.testIcon}>🤖</span> Test Automation
+            <span className={styles.testIcon}>🤖</span>{" "}
+            {t("skills_test_automation")}
           </h3>
           <div className={styles.skillsGrid}>
             {skillsData.qaTechnical.map((skill, index) => (
@@ -106,7 +108,8 @@ export function Skills() {
           transition={{ delay: 0.6 }}
         >
           <h3 className={styles.categoryTitle}>
-            <span className={styles.techIcon}>💻</span> Technical Stack
+            <span className={styles.techIcon}>💻</span>{" "}
+            {t("skills_technical_stack")}
           </h3>
           <div className={styles.radarChartContainer}>
             <Radar data={radarData} options={radarOptions} />
@@ -121,7 +124,8 @@ export function Skills() {
           transition={{ delay: 0.8 }}
         >
           <h3 className={styles.categoryTitle}>
-            <span className={styles.qaIcon}>🛠️</span> QA Methodology
+            <span className={styles.qaIcon}>🛠️</span>{" "}
+            {t("skills_qa_methodology")}
           </h3>
           <div className={styles.skillsGrid}>
             {skillsData.qaProcess.map((skill, index) => (
@@ -138,7 +142,8 @@ export function Skills() {
           transition={{ delay: 1 }}
         >
           <h3 className={styles.categoryTitle}>
-            <span className={styles.leadIcon}>🚀</span> QA Leadership
+            <span className={styles.leadIcon}>🚀</span>{" "}
+            {t("skills_qa_leadership")}
           </h3>
           <div className={styles.softSkillsContainer}>
             {skillsData.leadership.map((skill, index) => (
@@ -155,7 +160,8 @@ export function Skills() {
           transition={{ delay: 1.2 }}
         >
           <h3 className={styles.categoryTitle}>
-            <span className={styles.certIcon}>🏆</span> Certifications
+            <span className={styles.certIcon}>🏆</span>{" "}
+            {t("skills_certifications")}
           </h3>
           <div className={styles.certificationsGrid}>
             {skillsData.certifications.map((cert, index) => (
@@ -168,7 +174,7 @@ export function Skills() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              View All Certifications
+              {t("skills_view_all_certifications")}
             </a>
           </div>
         </motion.div>

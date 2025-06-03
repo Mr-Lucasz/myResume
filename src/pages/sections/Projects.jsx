@@ -1,5 +1,6 @@
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import styles from "./Projects.module.css";
 
 // Dados de exemplo - substitua com seus projetos reais
@@ -31,6 +32,7 @@ const projectsData = [
 ];
 
 export function Projects() {
+  const { t } = useTranslation();
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
@@ -49,7 +51,7 @@ export function Projects() {
           transition={{ delay: 0.3 }}
           className={styles.title}
         >
-          My <span className={styles.highlight}>Projects</span> Showcase
+          {t('projects_title')}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
@@ -57,7 +59,7 @@ export function Projects() {
           transition={{ delay: 0.5 }}
           className={styles.subtitle}
         >
-          Innovative solutions that demonstrate my technical expertise and creativity
+          {t('projects_subtitle')}
         </motion.p>
       </div>
 
@@ -76,6 +78,7 @@ export function Projects() {
 }
 
 function ProjectCard({ project, index }) {
+  const { t } = useTranslation();
   return (
     <motion.div
       className={styles.projectCard}
@@ -99,10 +102,10 @@ function ProjectCard({ project, index }) {
         </div>
         <div className={styles.projectLinks}>
           <a href={project.link} className={styles.demoLink}>
-            Live Demo
+            {t('projects_live_demo')}
           </a>
           <a href={project.github} className={styles.codeLink}>
-            View Code
+            {t('projects_view_code')}
           </a>
         </div>
       </div>
