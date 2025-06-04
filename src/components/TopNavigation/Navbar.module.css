@@ -2,10 +2,11 @@
 
 .navbar{
     display: flex;
-    gap: 1rem;
+    flex: 1;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
-    
+    gap: 1rem;
 }
 
 .navbarList{

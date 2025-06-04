@@ -110,10 +110,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.247);
+  background: rgba(0, 0, 0, 0);
   width: 100%;
   color: #ffffff;
-  margin-top: 0;
+  margin-top: 0rem;
   z-index: 2;
 }
 
