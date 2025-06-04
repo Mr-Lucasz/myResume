@@ -3,14 +3,12 @@ import { motion } from "framer-motion";
 import { Radar } from "react-chartjs-2";
 import "chart.js/auto";
 import styles from "./Skills.module.css";
-import { skillsData } from "../../data/skillsData"; // Assuming you have a separate file for skills data
+import { skillsData } from "../../data/skillsData";
 import { SkillBar } from "../../components/Skills/SkillBar";
 import { SoftSkillPill } from "../../components/Skills/SoftSkillPill";
 import { CertificationCard } from "../../components/Skills/CertificationCard";
-import { useTranslation } from "react-i18next";
 
 export function Skills() {
-  const { t } = useTranslation();
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   const radarData = {
@@ -69,7 +67,7 @@ export function Skills() {
           transition={{ delay: 0.3 }}
           className={styles.title}
         >
-          {t("skills_title")}
+          Skills
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
@@ -77,7 +75,7 @@ export function Skills() {
           transition={{ delay: 0.5 }}
           className={styles.subtitle}
         >
-          {t("skills_subtitle")}
+          Minhas principais competências técnicas e comportamentais
         </motion.p>
       </div>
 
@@ -91,7 +89,7 @@ export function Skills() {
         >
           <h3 className={styles.categoryTitle}>
             <span className={styles.testIcon}>🤖</span>{" "}
-            {t("skills_test_automation")}
+            Testes Automatizados
           </h3>
           <div className={styles.skillsGrid}>
             {skillsData.qaTechnical.map((skill, index) => (
@@ -109,7 +107,7 @@ export function Skills() {
         >
           <h3 className={styles.categoryTitle}>
             <span className={styles.techIcon}>💻</span>{" "}
-            {t("skills_technical_stack")}
+            Stack Técnica
           </h3>
           <div className={styles.radarChartContainer}>
             <Radar data={radarData} options={radarOptions} />
@@ -125,7 +123,7 @@ export function Skills() {
         >
           <h3 className={styles.categoryTitle}>
             <span className={styles.qaIcon}>🛠️</span>{" "}
-            {t("skills_qa_methodology")}
+            Metodologia de QA
           </h3>
           <div className={styles.skillsGrid}>
             {skillsData.qaProcess.map((skill, index) => (
@@ -143,7 +141,7 @@ export function Skills() {
         >
           <h3 className={styles.categoryTitle}>
             <span className={styles.leadIcon}>🚀</span>{" "}
-            {t("skills_qa_leadership")}
+            Liderança
           </h3>
           <div className={styles.softSkillsContainer}>
             {skillsData.leadership.map((skill, index) => (
@@ -161,7 +159,7 @@ export function Skills() {
         >
           <h3 className={styles.categoryTitle}>
             <span className={styles.certIcon}>🏆</span>{" "}
-            {t("skills_certifications")}
+            Certificações
           </h3>
           <div className={styles.certificationsGrid}>
             {skillsData.certifications.map((cert, index) => (
@@ -174,7 +172,7 @@ export function Skills() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {t("skills_view_all_certifications")}
+              Ver todas as certificações
             </a>
           </div>
         </motion.div>
