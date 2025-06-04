@@ -9,10 +9,8 @@ import { Projects } from "./sections/Projects";
 import { Contact } from "./sections/Contact";
 import styles from "./Main.module.css";
 import AnimatedCursor from "react-animated-cursor";
-import { useTranslation } from "react-i18next";
 
 export function Main() {
-  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
   const [showContent, setShowContent] = useState(false);
   const videoRef = useRef(null);
@@ -31,6 +29,7 @@ export function Main() {
 
   if (showContent) {
     return (
+<<<<<<< HEAD
       <Suspense fallback={<div>Carregando...</div>}>
         <Background>
           <div className={styles.page}>
@@ -47,25 +46,26 @@ export function Main() {
           </div>
         </Background>
       </Suspense>
+=======
+      <>
+        <Background />
+        <div className={styles.page}>
+          <AnimatedCursor color="193, 11, 111" />
+          <Header />
+          <main className={styles.mainContent}>
+            <AboutMe />
+            <Experiences />
+            <Skills />
+            <Projects />
+            <Contact />
+          </main>
+        </div>
+      </>
+>>>>>>> 769ffec4de2b1dc5dafbfc9d47640393122b8f0b
     );
   }
 
   return (
-    <div className={styles.playContainer}>
-      <AnimatedCursor color="193, 11, 111" />
-      <button
-        className={styles.playButton}
-        onClick={() => {
-          handleStartClick();
-          setTimeout(() => {
-            if (videoRef.current) {
-              videoRef.current.play();
-            }
-          }, 100);
-        }}
-      >
-        {t("play_button")}
-      </button>
-    </div>
+    <LoadingScreen onVideoEnd={handleVideoEnd} videoRef={videoRef} />
   );
 }

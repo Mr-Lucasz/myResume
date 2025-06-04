@@ -1,0 +1,1 @@
+A pasta src/locales/ e seus arquivos de tradução não são mais necessários. Pode excluir toda a pasta com segurança.
