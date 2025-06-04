@@ -19,5 +19,5 @@ export function LoadingScreen({ onVideoEnd, videoRef }) {
 
 LoadingScreen.propTypes = {
   onVideoEnd: PropTypes.func,
-  videoRef: PropTypes.object,
+  videoRef: PropTypes.shape({ current: PropTypes.instanceOf(HTMLVideoElement) }),
 };
