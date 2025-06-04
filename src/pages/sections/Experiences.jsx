@@ -2,10 +2,8 @@ import { useInView } from "react-intersection-observer";
 import { ExperienceTimeline } from "../../components/ExperienceTimeline";
 import styles from "./Experiences.module.css";
 import { motion } from "framer-motion";
-import { useTranslation } from 'react-i18next';
 
 export function Experiences() {
-  const { t } = useTranslation();
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
@@ -24,7 +22,7 @@ export function Experiences() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.3 }}
         >
-          <span className={styles.titleHighlight}>{t('experiences_title_highlight')}</span> {t('experiences_title')}
+          <span className={styles.titleHighlight}>Experiências</span> Profissionais
         </motion.h2>
         <motion.p 
           className={styles.subtitle}
@@ -32,7 +30,7 @@ export function Experiences() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.5 }}
         >
-          {t('experiences_subtitle')}
+          Um pouco da minha trajetória profissional
         </motion.p>
       </div>
       <ExperienceTimeline />

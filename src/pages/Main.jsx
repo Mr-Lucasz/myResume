@@ -9,10 +9,8 @@ import { Projects } from "./sections/Projects";
 import { Contact } from "./sections/Contact";
 import styles from "./Main.module.css";
 import AnimatedCursor from "react-animated-cursor";
-import { useTranslation } from "react-i18next";
 
 export function Main() {
-  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
   const [showContent, setShowContent] = useState(false);
   const videoRef = useRef(null);
@@ -37,7 +35,7 @@ export function Main() {
           <AnimatedCursor color="193, 11, 111" />
           <Header />
           <main className={styles.mainContent}>
-            <h1>{t("welcome")}</h1>
+            <h1>Bem-vindo!</h1>
             <AboutMe />
             <Experiences />
             <Skills />
@@ -50,21 +48,6 @@ export function Main() {
   }
 
   return (
-    <div className={styles.playContainer}>
-      <AnimatedCursor color="193, 11, 111" />
-      <button
-        className={styles.playButton}
-        onClick={() => {
-          handleStartClick();
-          setTimeout(() => {
-            if (videoRef.current) {
-              videoRef.current.play();
-            }
-          }, 100);
-        }}
-      >
-        {t("play_button")}
-      </button>
-    </div>
+    <LoadingScreen onVideoEnd={handleVideoEnd} videoRef={videoRef} />
   );
 }

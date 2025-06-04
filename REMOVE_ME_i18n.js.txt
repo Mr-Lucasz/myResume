@@ -1,0 +1,1 @@
+Arquivo i18n.js removido pelo assistente. Pode excluir este arquivo com segurança.
