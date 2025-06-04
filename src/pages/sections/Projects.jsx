@@ -1,6 +1,7 @@
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import PropTypes from "prop-types";
 import styles from "./Projects.module.css";
 
 // Dados de exemplo - substitua com seus projetos reais
@@ -112,3 +113,15 @@ function ProjectCard({ project, index }) {
     </motion.div>
   );
 }
+
+ProjectCard.propTypes = {
+  project: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+    link: PropTypes.string.isRequired,
+    github: PropTypes.string.isRequired,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+};

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 import styles from "./SoftSkillPill.module.css";
 
 export function SoftSkillPill({ skill, delay }) {
@@ -29,3 +30,11 @@ export function SoftSkillPill({ skill, delay }) {
     </motion.div>
   );
 }
+
+SoftSkillPill.propTypes = {
+  skill: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    level: PropTypes.number.isRequired,
+  }).isRequired,
+  delay: PropTypes.number,
+};

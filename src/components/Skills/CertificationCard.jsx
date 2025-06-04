@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 import styles from "./CertificationCard.module.css";
 
 export function CertificationCard({ cert, delay }) {
@@ -19,3 +20,12 @@ export function CertificationCard({ cert, delay }) {
     </motion.div>
   );
 }
+
+CertificationCard.propTypes = {
+  cert: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    issuer: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+  }).isRequired,
+  delay: PropTypes.number,
+};

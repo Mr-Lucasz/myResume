@@ -13,11 +13,11 @@ import styles from "./Background.module.css";
 
 export function Background({ children }) {
   const mount = useRef(null);
-  const stats = new Stats();
 
   useEffect(() => {
-    // Create stats instance and append to mount
-    mount.current.appendChild(stats.dom);
+    const stats = new Stats();
+    const mountEl = mount.current;
+    mountEl.appendChild(stats.dom);
 
     const scene = new THREE.Scene();
     scene.background = new THREE.Color().setHSL(
@@ -125,12 +125,12 @@ export function Background({ children }) {
 
     window.addEventListener("resize", handleResize);
     handleResize();
-
     animate();
-
     return () => {
       window.removeEventListener("resize", handleResize);
-      mount.current.removeChild(stats.dom);
+      if (mountEl && stats.dom.parentNode === mountEl) {
+        mountEl.removeChild(stats.dom);
+      }
     };
   }, []);
 

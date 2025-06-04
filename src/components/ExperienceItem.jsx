@@ -1,8 +1,9 @@
 /* ExperienceItem.js */
 import styles from "./ExperienceItem.module.css";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 
-export function ExperienceItem({ item, idx }) {
+export function ExperienceItem({ item }) {
   return (
     <div className={styles.item}>
       <motion.div 
@@ -56,3 +57,15 @@ export function ExperienceItem({ item, idx }) {
     </div>
   );
 }
+
+ExperienceItem.propTypes = {
+  item: PropTypes.shape({
+    logo: PropTypes.string.isRequired,
+    company: PropTypes.string.isRequired,
+    role: PropTypes.string.isRequired,
+    period: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    description: PropTypes.arrayOf(PropTypes.string).isRequired,
+    skills: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
+};

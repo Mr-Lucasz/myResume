@@ -1,21 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import { useState, useEffect } from "react";
 import styles from "./Header.module.css";
 import logotipo from "../../assets/logotipo-lucas-rodrigues.svg";
 import { Navbar } from "./Navbar";
-import brFlag from "../../assets/flag-br.png";
-import usFlag from "../../assets/flag-us.png";
 
 export function Header() {
-  const { i18n, t } = useTranslation();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [transparency, setTransparency] = useState(0);
-
-  const languages = [
-    { code: "pt", label: "Português", flag: brFlag },
-    { code: "en", label: "English", flag: usFlag },
-  ];
-  const currentLang = languages.find((l) => l.code === i18n.language) || languages[0];
 
   useEffect(() => {
     const handleMouseMove = (e) => setMousePosition({ x: e.clientX, y: e.clientY });

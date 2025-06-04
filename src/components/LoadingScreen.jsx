@@ -1,5 +1,5 @@
 import welcome from "../assets/welcome.mp4";
-import props from "prop-types";
+import PropTypes from "prop-types";
 import styles from "./LoadingScreen.module.css";
 
 export function LoadingScreen({ onVideoEnd, videoRef }) {
@@ -18,5 +18,6 @@ export function LoadingScreen({ onVideoEnd, videoRef }) {
 }
 
 LoadingScreen.propTypes = {
-  onVideoEnd: props.func,
+  onVideoEnd: PropTypes.func,
+  videoRef: PropTypes.object,
 };

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 import styles from "./SkillBar.module.css";
 
 export function SkillBar({ skill, delay }) {
@@ -26,3 +27,12 @@ export function SkillBar({ skill, delay }) {
     </motion.div>
   );
 }
+
+SkillBar.propTypes = {
+  skill: PropTypes.shape({
+    icon: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    level: PropTypes.number.isRequired,
+  }).isRequired,
+  delay: PropTypes.number,
+};
