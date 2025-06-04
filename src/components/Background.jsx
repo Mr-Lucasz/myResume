@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { FlyControls } from "three/examples/jsm/controls/FlyControls";
 import {
@@ -8,7 +8,7 @@ import {
 import Stats from "three/examples/jsm/libs/stats.module";
 import lensflare0 from "../assets/lensflare0.png";
 import lensflare3 from "../assets/lensflare3.png";
-import props from "prop-types";
+import PropTypes from "prop-types";
 import styles from "./Background.module.css";
 
 export function Background({ children }) {
@@ -146,5 +146,5 @@ export function Background({ children }) {
 }
 
 Background.propTypes = {
-  children: props.node,
+  children: PropTypes.node,
 };

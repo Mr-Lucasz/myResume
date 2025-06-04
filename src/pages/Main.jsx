@@ -1,7 +1,7 @@
-import { useRef, useState } from "react";
-import { Background } from "../components/Background";
+import React, { useRef, useState, Suspense } from "react";
 import { Header } from "../components/TopNavigation/Header";
 import { LoadingScreen } from "../components/LoadingScreen";
+const Background = React.lazy(() => import("../components/Background"));
 import { AboutMe } from "./sections/AboutMe";
 import { Experiences } from "./sections/Experiences";
 import { Skills } from "./sections/Skills";
@@ -31,21 +31,22 @@ export function Main() {
 
   if (showContent) {
     return (
-      <>
-        <Background />
-        <div className={styles.page}>
-          <AnimatedCursor color="193, 11, 111" />
-          <Header />
-          <main className={styles.mainContent}>
-            {/* <h1>{t("welcome")}</h1> */}
-            <AboutMe />
-            <Experiences />
-            <Skills />
-            <Projects />
-            <Contact />
-          </main>
-        </div>
-      </>
+      <Suspense fallback={<div>Carregando...</div>}>
+        <Background>
+          <div className={styles.page}>
+            <AnimatedCursor color="193, 11, 111" />
+            <Header />
+            <main className={styles.mainContent}>
+              {/* <h1>{t("welcome")}</h1> */}
+              <AboutMe />
+              <Experiences />
+              <Skills />
+              <Projects />
+              <Contact />
+            </main>
+          </div>
+        </Background>
+      </Suspense>
     );
   }
 
