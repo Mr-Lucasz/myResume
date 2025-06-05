@@ -194,20 +194,48 @@
   box-shadow: 0 5px 15px rgba(193, 11, 111, 0.5);
 }
 
-@media screen and (max-width: 768px) {
-  .title {
-    font-size: 2.5rem;
+@media (max-width: 1024px) {
+  .contactSection {
+    padding: 1.5rem 1.2rem;
   }
-  
+  .contactContent {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
   .subtitle {
     font-size: 1rem;
   }
-  
-  .contactContent {
-    grid-template-columns: 1fr;
+}
+
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 1rem 0.5rem;
   }
-  
-  .contactInfo, .contactForm {
-    padding: 1.5rem;
+  .contactContent {
+    gap: 0.7rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .subtitle {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactSection {
+    padding: 0.5rem 0.2rem;
+  }
+  .contactContent {
+    gap: 0.3rem;
+  }
+  .title {
+    font-size: 1.1rem;
+  }
+  .subtitle {
+    font-size: 0.9rem;
   }
 }

@@ -75,3 +75,34 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+@media (max-width: 1024px) {
+  .switcher {
+    margin-left: 0;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .current {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem 0.4rem 0.6rem;
+  }
+}
+@media (max-width: 768px) {
+  .switcher {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .current {
+    font-size: 0.95rem;
+    padding: 0.3rem 0.7rem 0.3rem 0.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .switcher {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .current {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.5rem 0.2rem 0.3rem;
+  }
+}

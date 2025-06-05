@@ -173,25 +173,55 @@
   gap: 1.5rem;
 }
 
-@media screen and (max-width: 768px) {
-  .title {
-    font-size: 2.5rem;
+@media (max-width: 1024px) {
+  .skillsSection {
+    padding: 1.5rem 1.2rem;
   }
-  
+  .dashboard {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+  .categoryTitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skillsSection {
+    padding: 1rem 0.5rem;
+  }
+  .dashboard {
+    gap: 0.7rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .categoryTitle {
+    font-size: 1rem;
+  }
   .subtitle {
     font-size: 1rem;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .skillsSection {
+    padding: 0.5rem 0.2rem;
+  }
   .dashboard {
-    grid-template-columns: 1fr;
+    gap: 0.3rem;
   }
-  
-  .skillCategory {
-    padding: 1.5rem;
+  .title {
+    font-size: 1.1rem;
   }
-  
   .categoryTitle {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
+  }
+  .subtitle {
+    font-size: 0.9rem;
   }
 }
 

@@ -1,27 +1,24 @@
 .header {
   position: fixed;
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  min-height: 6rem;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 4.2rem;
   display: flex;
   z-index: 1000;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0rem 2.5rem;
+  padding: 0 1.5rem;
   box-sizing: border-box;
-  background-color: transparent !important; /* Já está definido para ser transparente */
-  
-
+  background-color: transparent !important;
+  transition: min-height 0.2s, padding 0.2s;
 }
 
-.header div {
+.logoContainer {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  box-sizing: border-box;
+  height: 100%;
 }
 
 @keyframes rotateLogo {
@@ -34,8 +31,12 @@
 }
 
 .logotipo {
-  width: 75%;
+  width: 72px;
+  max-width: 18vw;
+  min-width: 40px;
+  height: auto;
   animation: rotateLogo 10s linear infinite;
+  transition: width 0.2s;
 }
 
 .logotipo:hover {
@@ -43,4 +44,35 @@
 }
 .blur {
   filter: blur(5px);
+}
+
+@media (max-width: 1024px) {
+  .header {
+    min-height: 3.5rem;
+    padding: 0 0.7rem;
+  }
+  .logotipo {
+    width: 56px;
+    max-width: 28vw;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    min-height: 3rem;
+    padding: 0 0.3rem;
+  }
+  .logotipo {
+    width: 40px;
+    max-width: 36vw;
+  }
+}
+@media (max-width: 480px) {
+  .header {
+    min-height: 2.5rem;
+    padding: 0 0.1rem;
+  }
+  .logotipo {
+    width: 32px;
+    max-width: 50vw;
+  }
 }

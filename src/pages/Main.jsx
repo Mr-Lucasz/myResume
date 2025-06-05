@@ -14,7 +14,7 @@ import { useTranslation } from 'react-i18next';
 export function Main() {
   const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
-  const [showContent, setShowContent] = useState(false);
+  const [showContent, setShowContent] = useState(true);
   const videoRef = useRef(null);
   
   const handleStartClick = () => {

@@ -1,22 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
-.navbar{
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center;
-    flex-direction: row;
-    width: 100%;
-    gap: 1rem;
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  gap: 1rem;
+  position: relative;
 }
 
-.navbarList{
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    max-height: 50px;
-    width: 100%;
+.navbarList {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  max-height: 50px;
+  width: 100%;
+  background: none;
+  position: static;
+  box-shadow: none;
 }
 
 /* remover ponto list  e hove */
@@ -40,4 +44,36 @@
     border-bottom: 2px solid #ffffff;
     transition: border-bottom 0.2s;
 
+}
+
+/* RESPONSIVO: MENU SANDUICHE */
+@media (max-width: 1024px) {
+  .navbarList {
+    font-size: 1.1rem;
+    gap: 0.5rem;
+    padding: 0.5rem 0.2rem;
+  }
+}
+@media (max-width: 768px) {
+  .navbarList {
+    font-size: 1rem;
+    gap: 0.2rem;
+    padding: 0.2rem 0.1rem;
+  }
+}
+@media (max-width: 576px) {
+  .navbarList {
+    font-size: 0.9rem;
+    gap: 0.1rem;
+    padding: 0.1rem 0.05rem;
+  }
+}
+
+.desktopLang {
+  display: flex;
+  align-items: center;
+  margin-left: 1.5rem;
+}
+.mobileLang {
+  display: none;
 }
