@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import emailjs from 'emailjs-com';
+import { AnimatePresence, motion as m } from 'framer-motion';
 import styles from "./Contact.module.css";
 
 export function Contact() {
@@ -11,12 +12,25 @@ export function Contact() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupType, setPopupType] = useState('success');
+  const [popupMsg, setPopupMsg] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
     setSuccess(false);
     setError(false);
+
+    // Função robusta para garantir tradução ou fallback
+    function getMsg(key, fallback) {
+      const msg = t(key);
+      if (!msg || msg === key || msg.startsWith('contact_form_')) return fallback;
+      return msg;
+    }
+
+    const successMsg = getMsg('contact_form_success', 'Mensagem enviada com sucesso!');
+    const errorMsg = getMsg('contact_form_error', 'Erro ao enviar. Tente novamente.');
 
     emailjs.sendForm(
       import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -27,11 +41,19 @@ export function Contact() {
       .then(() => {
         setSuccess(true);
         setLoading(false);
+        setPopupType('success');
+        setPopupMsg(successMsg);
+        setShowPopup(true);
         e.target.reset();
+        setTimeout(() => setShowPopup(false), 4000);
       })
       .catch(() => {
         setError(true);
         setLoading(false);
+        setPopupType('error');
+        setPopupMsg(errorMsg);
+        setShowPopup(true);
+        setTimeout(() => setShowPopup(false), 4000);
       });
   };
 
@@ -127,12 +149,41 @@ export function Contact() {
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
           
-          {success && (
-            <p style={{ color: 'limegreen', marginTop: 10 }}>{t('contact_form_success') || 'Mensagem enviada com sucesso!'}</p>
-          )}
-          {error && (
-            <p style={{ color: 'red', marginTop: 10 }}>{t('contact_form_error') || 'Erro ao enviar. Tente novamente.'}</p>
-          )}
+          <AnimatePresence>
+            {showPopup && (
+              <m.div
+                initial={{ opacity: 0, y: 40, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 40, scale: 0.9 }}
+                transition={{ duration: 0.5, type: 'spring' }}
+                className={popupType === 'success' ? styles.popupSuccess : styles.popupError}
+                style={{
+                  position: 'fixed',
+                  top: '30px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  zIndex: 9999,
+                  minWidth: 320,
+                  maxWidth: 400,
+                  padding: '1.2rem 2rem',
+                  borderRadius: 16,
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
+                  fontWeight: 500,
+                  fontSize: 18,
+                  background: popupType === 'success' ? 'linear-gradient(90deg,#0bc1a8,#c10b6f)' : 'linear-gradient(90deg,#c10b6f,#0bc1a8)',
+                  color: '#fff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 12,
+                  border: '2px solid #fff',
+                  animation: 'pop 0.5s',
+                }}
+              >
+                {popupType === 'success' ? '✅' : '❌'}
+                <span>{popupMsg}</span>
+              </m.div>
+            )}
+          </AnimatePresence>
           <motion.button
             type="submit"
             className={styles.submitButton}

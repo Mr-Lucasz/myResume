@@ -39,6 +39,9 @@
   "contact_form_subject": "Subject",
   "contact_form_message": "Your Message",
   "contact_form_send": "Send Message",
+  "contact_form_success": "Message sent successfully! Thank you for reaching out. I will get back to you soon.",
+  "contact_form_error": "Failed to send. Please try again or email me directly.",
+  "contact_form_sending": "Sending...",
   "experiences_list": [
     {
       "company": "Levva Tecnologia",

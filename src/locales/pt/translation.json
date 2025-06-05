@@ -39,6 +39,9 @@
   "contact_form_subject": "Assunto",
   "contact_form_message": "Sua Mensagem",
   "contact_form_send": "Enviar Mensagem",
+  "contact_form_success": "Mensagem enviada com sucesso! Obrigado pelo contato. Em breve retornarei para você.",
+  "contact_form_error": "Erro ao enviar. Tente novamente ou envie um email diretamente.",
+  "contact_form_sending": "Enviando...",
   "experiences_list": [
     {
       "company": "Levva Tecnologia",
