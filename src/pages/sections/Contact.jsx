@@ -1,11 +1,39 @@
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
+import emailjs from 'emailjs-com';
 import styles from "./Contact.module.css";
 
 export function Contact() {
   const { t } = useTranslation();
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess(false);
+    setError(false);
+
+    emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      e.target,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+      .then(() => {
+        setSuccess(true);
+        setLoading(false);
+        e.target.reset();
+      })
+      .catch(() => {
+        setError(true);
+        setLoading(false);
+      });
+  };
 
   return (
     <motion.section
@@ -50,7 +78,7 @@ export function Contact() {
               <div className={styles.contactIcon}>📧</div>
               <div>
                 <h4>{t('contact_email')}</h4>
-                <a href="mailto:l.cunha14.lc@gmail.com">l.cunha14.lc@gmail.com</a>
+                <a href={`mailto:${import.meta.env.VITE_CONTACT_EMAIL}`}>{import.meta.env.VITE_CONTACT_EMAIL}</a>
               </div>
             </div>
             
@@ -77,6 +105,7 @@ export function Contact() {
           initial={{ opacity: 0, x: 50 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ delay: 0.9 }}
+          onSubmit={handleSubmit}
         >
           <div className={styles.formGroup}>
             <label htmlFor="name">{t('contact_form_name')}</label>
@@ -98,13 +127,20 @@ export function Contact() {
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
           
+          {success && (
+            <p style={{ color: 'limegreen', marginTop: 10 }}>{t('contact_form_success') || 'Mensagem enviada com sucesso!'}</p>
+          )}
+          {error && (
+            <p style={{ color: 'red', marginTop: 10 }}>{t('contact_form_error') || 'Erro ao enviar. Tente novamente.'}</p>
+          )}
           <motion.button
             type="submit"
             className={styles.submitButton}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            disabled={loading}
           >
-            {t('contact_form_send')}
+            {loading ? (t('contact_form_sending') || 'Enviando...') : t('contact_form_send')}
           </motion.button>
         </motion.form>
       </div>
