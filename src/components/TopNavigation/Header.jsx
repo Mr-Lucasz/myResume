@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import styles from "./Header.module.css";
 import logotipo from "../../assets/logotipo-lucas-rodrigues.svg";
 import { Navbar } from "./Navbar";
-import { LanguageSwitcher } from "./LanguageSwitcher";
 
 function HamburgerButton({ menuOpen, setMenuOpen }) {
   return (
@@ -102,7 +101,6 @@ export function Header() {
         />
       </div>
       <div className={styles.spacer} />
-      <LanguageSwitcher />
       <HamburgerButton menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
     </header>

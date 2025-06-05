@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./LanguageSwitcher.module.css";
+import flagBR from '../../assets/flag-br.png';
+import flagUS from '../../assets/flag-us.png';
 
 export function LanguageSwitcher() {
   const { i18n } = useTranslation();
   const [open, setOpen] = useState(false);
   const languages = [
-    { code: "pt", label: "Português", flag: "/src/assets/flag-br.png" },
-    { code: "en", label: "English", flag: "/src/assets/flag-us.png" },
+    { code: "pt", label: "Português", flag: flagBR },
+    { code: "en", label: "English", flag: flagUS },
   ];
   const current = languages.find((l) => l.code === i18n.language) || languages[0];
 
