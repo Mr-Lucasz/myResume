@@ -76,3 +76,58 @@
     max-width: 50vw;
   }
 }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 1300; /* aumentado para ficar acima do menu mobile */
+  transition: background 0.2s;
+}
+.hamburger:hover, .hamburger:focus {
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+}
+.hamburgerBar {
+  width: 28px;
+  height: 4px;
+  background: #fff;
+  margin: 3px 0;
+  border-radius: 2px;
+  transition: all 0.3s;
+  display: block;
+}
+.closeIcon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%) scale(0);
+  color: #fff;
+  font-size: 2rem;
+  pointer-events: none;
+  transition: transform 0.3s;
+}
+.hamburgerOpen .hamburgerBar {
+  opacity: 0;
+  transform: scaleX(0.5);
+}
+.hamburgerOpen .closeIcon {
+  transform: translate(-50%,-50%) scale(1);
+}
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex !important;
+  }
+  .spacer {
+    display: none;
+  }
+}

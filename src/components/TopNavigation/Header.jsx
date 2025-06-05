@@ -9,6 +9,7 @@ export function Header() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [transparency, setTransparency] = useState(0);
   const [listOpen, setListOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const languages = [
     { code: "pt", label: "Português" },
     { code: "en", label: "English" },
@@ -82,7 +83,20 @@ export function Header() {
           style={logoStyle}
         />
       </div>
-      <Navbar />
+      <div className={styles.spacer} />
+      <button
+        className={styles.hamburger + (menuOpen ? ' ' + styles.hamburgerOpen : '')}
+        aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+        aria-expanded={menuOpen}
+        onClick={() => setMenuOpen((open) => !open)}
+      >
+        <span className={styles.hamburgerBar}></span>
+        <span className={styles.hamburgerBar}></span>
+        <span className={styles.hamburgerBar}></span>
+        {/* Ícone de close (X) sobreposto */}
+        <span className={styles.closeIcon}>&#10005;</span>
+      </button>
+      <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
     </header>
   );
 }
