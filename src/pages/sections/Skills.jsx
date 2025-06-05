@@ -4,9 +4,11 @@ import { Radar } from "react-chartjs-2";
 import "chart.js/auto";
 import styles from "./Skills.module.css";
 import { skillsData } from "../../data/skillsData"; // Assuming you have a separate file for skills data
-import { SkillBar } from "../../components/Skills/SkillBar";
-import { SoftSkillPill } from "../../components/Skills/SoftSkillPill";
-import { CertificationCard } from "../../components/Skills/CertificationCard";
+import { SkillsTestAutomationSection } from "../../components/Skills/SkillsTestAutomationSection";
+import { SkillsTechnicalSection } from "../../components/Skills/SkillsTechnicalSection";
+import { SkillsQAProcessSection } from "../../components/Skills/SkillsQAProcessSection";
+import { SkillsLeadershipSection } from "../../components/Skills/SkillsLeadershipSection";
+import { SkillsCertificationsSection } from "../../components/Skills/SkillsCertificationsSection";
 import { useTranslation } from "react-i18next";
 
 export function Skills() {
@@ -80,104 +82,33 @@ export function Skills() {
           {t("skills_subtitle")}
         </motion.p>
       </div>
-
       <div className={styles.dashboard}>
-        {/* Seção de Test Automation */}
-        <motion.div
-          className={styles.skillCategory}
-          initial={{ opacity: 0, x: -20 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
-          transition={{ delay: 0.4 }}
-        >
-          <h3 className={styles.categoryTitle}>
-            <span className={styles.testIcon}>🤖</span>{" "}
-            {t("skills_test_automation")}
-          </h3>
-          <div className={styles.skillsGrid}>
-            {skillsData.qaTechnical.map((skill, index) => (
-              <SkillBar key={index} skill={skill} delay={index * 0.1} />
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Seção de Technical Skills */}
-        <motion.div
-          className={styles.skillCategory}
-          initial={{ opacity: 0, x: -20 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
-          transition={{ delay: 0.6 }}
-        >
-          <h3 className={styles.categoryTitle}>
-            <span className={styles.techIcon}>💻</span>{" "}
-            {t("skills_technical_stack")}
-          </h3>
-          <div className={styles.radarChartContainer}>
-            <Radar data={radarData} options={radarOptions} />
-          </div>
-        </motion.div>
-
-        {/* Seção de QA Process */}
-        <motion.div
-          className={styles.skillCategory}
-          initial={{ opacity: 0, x: -20 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
-          transition={{ delay: 0.8 }}
-        >
-          <h3 className={styles.categoryTitle}>
-            <span className={styles.qaIcon}>🛠️</span>{" "}
-            {t("skills_qa_methodology")}
-          </h3>
-          <div className={styles.skillsGrid}>
-            {skillsData.qaProcess.map((skill, index) => (
-              <SkillBar key={index} skill={skill} delay={index * 0.1} />
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Seção de Leadership */}
-        <motion.div
-          className={styles.skillCategory}
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 1 }}
-        >
-          <h3 className={styles.categoryTitle}>
-            <span className={styles.leadIcon}>🚀</span>{" "}
-            {t("skills_qa_leadership")}
-          </h3>
-          <div className={styles.softSkillsContainer}>
-            {skillsData.leadership.map((skill, index) => (
-              <SoftSkillPill key={index} skill={skill} delay={index * 0.15} />
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Seção de Certificações */}
-        <motion.div
-          className={styles.certifications}
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 1.2 }}
-        >
-          <h3 className={styles.categoryTitle}>
-            <span className={styles.certIcon}>🏆</span>{" "}
-            {t("skills_certifications")}
-          </h3>
-          <div className={styles.certificationsGrid}>
-            {skillsData.certifications.map((cert, index) => (
-              <CertificationCard key={index} cert={cert} delay={index * 0.15} />
-            ))}
-          </div>
-          <div className={styles.certLink}>
-            <a
-              href="https://www.linkedin.com/in/lrodrigues21/details/certifications/?profileUrn=urn%3Ali%3Afsd_profile%3AACoAABt0O_MBDAIn36Qf8UnEYh_Agr8RcJWcJGg"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t("skills_view_all_certifications")}
-            </a>
-          </div>
-        </motion.div>
+        <SkillsTestAutomationSection
+          skillsData={skillsData}
+          inView={inView}
+          t={t}
+        />
+        <SkillsTechnicalSection
+          radarData={radarData}
+          radarOptions={radarOptions}
+          inView={inView}
+          t={t}
+        />
+        <SkillsQAProcessSection
+          skillsData={skillsData}
+          inView={inView}
+          t={t}
+        />
+        <SkillsLeadershipSection
+          skillsData={skillsData}
+          inView={inView}
+          t={t}
+        />
+        <SkillsCertificationsSection
+          skillsData={skillsData}
+          inView={inView}
+          t={t}
+        />
       </div>
     </motion.section>
   );

@@ -3,6 +3,24 @@ import { useTranslation } from "react-i18next";
 import styles from "./Header.module.css";
 import logotipo from "../../assets/logotipo-lucas-rodrigues.svg";
 import { Navbar } from "./Navbar";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+
+function HamburgerButton({ menuOpen, setMenuOpen }) {
+  return (
+    <button
+      className={styles.hamburger + (menuOpen ? ' ' + styles.hamburgerOpen : '')}
+      aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+      aria-expanded={menuOpen}
+      onClick={() => setMenuOpen((open) => !open)}
+    >
+      <span className={styles.hamburgerBar}></span>
+      <span className={styles.hamburgerBar}></span>
+      <span className={styles.hamburgerBar}></span>
+      {/* Ícone de close (X) sobreposto */}
+      <span className={styles.closeIcon}>&#10005;</span>
+    </button>
+  );
+}
 
 export function Header() {
   const { i18n } = useTranslation();
@@ -84,18 +102,8 @@ export function Header() {
         />
       </div>
       <div className={styles.spacer} />
-      <button
-        className={styles.hamburger + (menuOpen ? ' ' + styles.hamburgerOpen : '')}
-        aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
-        aria-expanded={menuOpen}
-        onClick={() => setMenuOpen((open) => !open)}
-      >
-        <span className={styles.hamburgerBar}></span>
-        <span className={styles.hamburgerBar}></span>
-        <span className={styles.hamburgerBar}></span>
-        {/* Ícone de close (X) sobreposto */}
-        <span className={styles.closeIcon}>&#10005;</span>
-      </button>
+      <LanguageSwitcher />
+      <HamburgerButton menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
     </header>
   );
