@@ -222,6 +222,15 @@
     align-items: center;
     gap: 0.7rem;
     z-index: 1;
+    display: flex;
+    position: relative;
+  }
+  .collapseArrowModern {
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 0;
   }
   #exp-item-0, #exp-item-1, #exp-item-2, #exp-item-3, #exp-item-4, #exp-item-5 {
     margin-top: 0.7rem;

@@ -51,11 +51,13 @@ export function ExperienceTimeline() {
                 </button>
               </div>
             ) : null}
-            {(!isMobile || openIdx === idx) && (
-              <div id={`exp-item-${idx}`}>
-                <ExperienceItem item={item} idx={idx} />
-              </div>
-            )}
+            <motion.div layout transition={{ duration: 0.4 }}>
+              {(!isMobile || openIdx === idx) && (
+                <div id={`exp-item-${idx}`}>
+                  <ExperienceItem item={item} idx={idx} />
+                </div>
+              )}
+            </motion.div>
           </motion.div>
         ))}
       </div>
