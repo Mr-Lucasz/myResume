@@ -1,5 +1,4 @@
-import welcome from "../assets/welcome.mp4";
-import props from "prop-types";
+import welcome from "../assets/welcome.webm";
 import styles from "./LoadingScreen.module.css";
 
 export function LoadingScreen({ onVideoEnd, videoRef }) {
@@ -11,12 +10,8 @@ export function LoadingScreen({ onVideoEnd, videoRef }) {
         onEnded={onVideoEnd}
         playsInline
       >
-        <source src={welcome} type="video/mp4" />
+        <source src={welcome} type="video/webm" />
       </video>
     </div>
   );
 }
-
-LoadingScreen.propTypes = {
-  onVideoEnd: props.func,
-};

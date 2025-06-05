@@ -73,12 +73,22 @@
   font-weight: 300;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 1024px) {
   .title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
   }
   
   .subtitle {
     font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.1rem;
   }
 }

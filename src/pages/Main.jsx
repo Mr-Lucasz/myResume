@@ -14,9 +14,12 @@ import { useTranslation } from 'react-i18next';
 export function Main() {
   const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
-  const [showContent, setShowContent] = useState(true);
+  // Verifica se já foi exibido o vídeo de introdução
+  const [showContent, setShowContent] = useState(() => {
+    return localStorage.getItem('introSeen') === 'true';
+  });
   const videoRef = useRef(null);
-  
+
   const handleStartClick = () => {
     setIsLoading(true);
   };
@@ -24,6 +27,7 @@ export function Main() {
   const handleVideoEnd = () => {
     setIsLoading(false);
     setShowContent(true);
+    localStorage.setItem('introSeen', 'true');
   };
 
   if (isLoading && !showContent) {

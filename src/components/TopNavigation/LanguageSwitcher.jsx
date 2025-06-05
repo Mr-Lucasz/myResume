@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./LanguageSwitcher.module.css";
 import flagBR from '../../assets/flag-br.png';

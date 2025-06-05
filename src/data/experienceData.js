@@ -3,7 +3,6 @@ import iatecLogo from "../../src/assets/iatec_logo.png";
 import beesLogo from "../../src/assets/bees_logo.png";
 import cognyteLogo from "../../src/assets/cognyte_logo.png";
 import youdevelopLogo from "../../src/assets/you_logo.png";
-import { useTranslation } from "react-i18next";
 
 export function getExperienceData(t) {
   const logos = [levvaLogo, iatecLogo, beesLogo, cognyteLogo, youdevelopLogo];

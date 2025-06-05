@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { useThreeScene } from "./Background/useThreeScene";
-import props from "prop-types";
 import styles from "./Background.module.css";
 
 export function Background({ children }) {
@@ -16,7 +15,3 @@ export function Background({ children }) {
     </div>
   );
 }
-
-Background.propTypes = {
-  children: props.node,
-};

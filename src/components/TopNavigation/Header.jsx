@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
 import styles from "./Header.module.css";
 import logotipo from "../../assets/logotipo-lucas-rodrigues.svg";
 import { Navbar } from "./Navbar";
@@ -22,26 +21,11 @@ function HamburgerButton({ menuOpen, setMenuOpen }) {
 }
 
 export function Header() {
-  const { i18n } = useTranslation();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [transparency, setTransparency] = useState(0);
   const [listOpen, setListOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const languages = [
-    { code: "pt", label: "Português" },
-    { code: "en", label: "English" },
-  ];
-  const currentLang = languages.find((l) => l.code === i18n.language) || languages[0];
 
-  function handleListToggle() {
-    setListOpen((open) => !open);
-  }
-  function handleSelect(lang) {
-    if (lang !== i18n.language) {
-      i18n.changeLanguage(lang);
-    }
-    setListOpen(false);
-  }
   useEffect(() => {
     function handleClickOutside(e) {
       if (!e.target.closest('.' + styles.languageListChoice)) {

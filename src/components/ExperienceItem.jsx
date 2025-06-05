@@ -2,7 +2,7 @@
 import styles from "./ExperienceItem.module.css";
 import { motion } from "framer-motion";
 
-export function ExperienceItem({ item, idx }) {
+export function ExperienceItem({ item }) {
   return (
     <div className={styles.item}>
       <motion.div 

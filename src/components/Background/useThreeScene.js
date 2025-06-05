@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import * as THREE from "three";
 import { FlyControls } from "three/examples/jsm/controls/FlyControls";
 import {
@@ -102,9 +102,13 @@ export function useThreeScene(mountRef) {
     handleResize();
     animate();
 
+    // Corrigir warning: copiar mountRef.current para variável local
+    const cleanupMount = mountRef.current;
     return () => {
       window.removeEventListener("resize", handleResize);
-      mountRef.current.removeChild(stats.dom);
+      if (cleanupMount) {
+        cleanupMount.removeChild(stats.dom);
+      }
     };
   }, [mountRef]);
 }
