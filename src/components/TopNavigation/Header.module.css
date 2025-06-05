@@ -68,11 +68,11 @@
 }
 @media (max-width: 480px) {
   .header {
-    min-height: 2.5rem;
+    min-height: 2.75rem;
     padding: 0 0.1rem;
   }
   .logotipo {
-    width: 32px;
+    width: 30px;
     max-width: 50vw;
   }
 }
@@ -90,7 +90,7 @@
   border: none;
   outline: none;
   cursor: pointer;
-  z-index: 1300; /* aumentado para ficar acima do menu mobile */
+  z-index: 1100;
   transition: background 0.2s;
 }
 .hamburger:hover, .hamburger:focus {

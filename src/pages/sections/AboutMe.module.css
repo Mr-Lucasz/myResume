@@ -260,13 +260,76 @@
   .sectionAbout {
     padding: 0.5rem 0.2rem;
   }
+  .glitchText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1.5rem;
+    padding-top: 2.2rem;
+    background: none;
+    text-shadow: none;
+    position: relative;
+  }
+  .gradientText {
+    display: block;
+    position: static;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background: none;
+    background: linear-gradient(90deg, #c10b6f, #0bc1a8);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 2.5s linear infinite;
+    margin-bottom: 0.1rem;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+    text-align: center;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    opacity: 1;
+  }
   .nameHighlight {
-    font-size: 1.3rem;
+    font-size: 2.3rem;
+    font-weight: 900;
+    margin-bottom: 0.3rem;
+    margin-top: 0.2rem;
+    background: linear-gradient(90deg, #0bc1a8, #c10b6f, #fff, #c10b6f);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 2.5s linear infinite, pulseName 2.5s infinite;
+    border-radius: 1.2rem;
+    padding: 0.7rem 1.5rem 0.7rem 1.5rem;
+    box-shadow: 0 4px 32px 0 #c10b6f44, 0 1.5px 0 #0bc1a8;
+    border: 2px solid #c10b6f;
+    text-align: center;
+    position: relative;
+    align-self: center;
   }
-  .subtitle {
-    font-size: 0.95rem;
+  .nameHighlight::after {
+    display: none;
   }
-  .description {
-    font-size: 0.95rem;
+  .gradientText.desktopOnly, .desktopOnly {
+    display: none !important;
   }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes pulseName {
+  0% { box-shadow: 0 4px 32px 0 #c10b6f44, 0 1.5px 0 #0bc1a8; }
+  50% { box-shadow: 0 8px 48px 0 #0bc1a844, 0 2.5px 0 #c10b6f; }
+  100% { box-shadow: 0 4px 32px 0 #c10b6f44, 0 1.5px 0 #0bc1a8; }
 }
