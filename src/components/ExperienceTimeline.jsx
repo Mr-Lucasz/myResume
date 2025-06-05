@@ -4,13 +4,23 @@ import { getExperienceData } from "../data/experienceData";
 import { ExperienceItem } from "./ExperienceItem";
 import styles from "./ExperienceTimeline.module.css";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function ExperienceTimeline() {
   const { t } = useTranslation();
   const experienceData = getExperienceData(t);
   const [openIdx, setOpenIdx] = useState(null);
-  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth <= 768);
+
+  useEffect(() => {
+    function handleResize() {
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+      setOpenIdx(null); // Fecha todos ao trocar modo
+    }
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleToggle = (idx) => {
     setOpenIdx(openIdx === idx ? null : idx);
