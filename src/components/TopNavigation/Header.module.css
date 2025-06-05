@@ -115,6 +115,7 @@
   font-size: 2rem;
   pointer-events: none;
   transition: transform 0.3s;
+  z-index: 1201; /* maior que o menu */
 }
 .hamburgerOpen .hamburgerBar {
   opacity: 0;
@@ -122,12 +123,18 @@
 }
 .hamburgerOpen .closeIcon {
   transform: translate(-50%,-50%) scale(1);
+  pointer-events: auto;
 }
+
 @media (max-width: 900px) {
   .hamburger {
     display: flex !important;
+    z-index: 1202;
   }
-  .spacer {
-    display: none;
+}
+
+@media (max-width: 900px) {
+  .mobileMenu {
+    z-index: 1200;
   }
 }
