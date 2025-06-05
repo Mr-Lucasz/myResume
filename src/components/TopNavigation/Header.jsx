@@ -3,17 +3,15 @@ import { useTranslation } from "react-i18next";
 import styles from "./Header.module.css";
 import logotipo from "../../assets/logotipo-lucas-rodrigues.svg";
 import { Navbar } from "./Navbar";
-import brFlag from "../../assets/flag-br.png";
-import usFlag from "../../assets/flag-us.png";
 
 export function Header() {
-  const { i18n, t } = useTranslation();
+  const { i18n } = useTranslation();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [transparency, setTransparency] = useState(0);
   const [listOpen, setListOpen] = useState(false);
   const languages = [
-    { code: "pt", label: "Português", flag: brFlag },
-    { code: "en", label: "English", flag: usFlag },
+    { code: "pt", label: "Português" },
+    { code: "en", label: "English" },
   ];
   const currentLang = languages.find((l) => l.code === i18n.language) || languages[0];
 
@@ -85,39 +83,6 @@ export function Header() {
         />
       </div>
       <Navbar />
-      <div
-        className={styles.languageListChoice + (listOpen ? ' ' + styles.open : '')}
-        tabIndex={0}
-        onBlur={() => setListOpen(false)}
-      >
-        <div
-          className={styles.languageListTitle}
-          onClick={handleListToggle}
-          aria-haspopup="listbox"
-          aria-expanded={listOpen}
-        >
-          <img src={currentLang.flag} alt={currentLang.label} className={styles.languageListFlag} />
-          {currentLang.label}
-        </div>
-        <div className={styles.languageListObjects} style={{ pointerEvents: listOpen ? 'auto' : 'none' }}>
-          {languages.map(lang => (
-            <label key={lang.code} className={styles.languageListLabel}>
-              <input
-                type="radio"
-                className={styles.languageListRadio}
-                name="language"
-                checked={i18n.language === lang.code}
-                onChange={() => handleSelect(lang.code)}
-                tabIndex={listOpen ? 0 : -1}
-              />
-              <span>
-                <img src={lang.flag} alt={lang.label} className={styles.languageListFlag} />
-                {lang.label}
-              </span>
-            </label>
-          ))}
-        </div>
-      </div>
     </header>
   );
 }

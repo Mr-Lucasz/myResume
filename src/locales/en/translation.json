@@ -38,5 +38,80 @@
   "contact_form_email": "Email Address",
   "contact_form_subject": "Subject",
   "contact_form_message": "Your Message",
-  "contact_form_send": "Send Message"
+  "contact_form_send": "Send Message",
+  "experiences_list": [
+    {
+      "company": "Levva Tecnologia",
+      "role": "Senior QA Analyst",
+      "period": "Apr 2025 - Present",
+      "location": "Remote",
+      "description": [
+        "Senior QA in digital transformation projects focused on performance, quality, and reliability.",
+        "Execution of manual and automated tests (functional, exploratory, and performance).",
+        "Creation of test plans, cases, and scenarios (functional and non-functional).",
+        "API validation, database testing, and security testing.",
+        "Mentoring and technical support for Mid and Junior QA professionals.",
+        "Active collaboration in continuous improvement initiatives for quality processes and agile culture."
+      ],
+      "skills": ["Cypress", "K6", "Postman", "CI/CD", "Mentoring", "OKRs", "Mobile Testing"]
+    },
+    {
+      "company": "IATEC",
+      "role": "Mid-level Quality Analyst",
+      "period": "Dec 2024 - Mar 2025",
+      "location": "Remote",
+      "description": [
+        "Planning and execution of functional, regression, and automation tests.",
+        "Test automation with modern frameworks for web and APIs.",
+        "Continuous test integration in CI/CD pipelines.",
+        "Performance and load testing.",
+        "Direct collaboration with development teams for early defect detection and continuous improvement.",
+        "Participation in agile ceremonies, ensuring alignment between quality and delivery."
+      ],
+      "skills": ["CI/CD", "Defect Analysis", "Scrum", "Manual Testing", "Report Defects"]
+    },
+    {
+      "company": "BEES Brasil",
+      "role": "Quality Analyst",
+      "period": "Dec 2022 - Dec 2024",
+      "location": "Remote",
+      "description": [
+        "Automated testing with Cypress and Cucumber.",
+        "API and endpoint validation using mocks.",
+        "Integration with Azure DevOps and continuous integration pipeline.",
+        "Backend testing for contract and API/service validation with Postman.",
+        "Planning and execution of manual and automated tests.",
+        "Performance testing with K6 and mobile device testing."
+      ],
+      "skills": ["Cypress", "Cucumber", "Postman", "Azure DevOps", "K6", "Jira", "Mobile Testing", "Web Testing"]
+    },
+    {
+      "company": "Cognyte",
+      "role": "Junior QA Analyst",
+      "period": "Oct 2021 - Dec 2022",
+      "location": "Florianópolis, SC",
+      "description": [
+        "Strategies, planning, and execution of tests.",
+        "Agile testing and integration with development.",
+        "Quality assurance through test validation.",
+        "Test scenario automation.",
+        "Requirements analysis and scenario mapping.",
+        "Quality coverage in agile methodologies."
+      ],
+      "skills": ["Functional Testing", "Automation", "Kanban", "SQL", "Agile Testing", "Scrum", "Gitlab"]
+    },
+    {
+      "company": "YOUDevelop",
+      "role": "Product Owner",
+      "period": "Jan 2022 - Nov 2022",
+      "location": "Remote",
+      "description": [
+        "Product vision definition and backlog management.",
+        "Stakeholder engagement and delivery planning.",
+        "Monitoring development and product launches.",
+        "Ensuring continuous value delivery and alignment with organizational goals."
+      ],
+      "skills": ["Kanban", "Planning", "Backlog Management", "Stakeholder Engagement", "Quality", "Testing"]
+    }
+  ]
 }

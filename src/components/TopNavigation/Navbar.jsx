@@ -1,6 +1,7 @@
 // Importe Link de react-scroll
 import { Link } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
+import { LanguageSwitcher } from "./LanguageSwitcher";
 import styles from './Navbar.module.css';
 
 export function Navbar() {
@@ -17,6 +18,7 @@ export function Navbar() {
         <li><Link to="projects" spy={true} hashSpy={true} smooth={true} duration={500} offset={headerOffset}>{t('projects')}</Link></li>
         <li><Link to="contact" spy={true} hashSpy={true} smooth={true} duration={500} offset={headerOffset}>{t('contact')}</Link></li>
       </ul>
+      <LanguageSwitcher />
     </nav>
   );
 }

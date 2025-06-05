@@ -72,6 +72,11 @@ export function Projects() {
         {projectsData.map((project, index) => (
           <ProjectCard key={index} project={project} index={index} />
         ))}
+        {/* Banner de em construção */}
+        <div className={styles.underConstruction}>
+          <span role="img" aria-label="Em construção" className={styles.constructionIcon}>🚧</span>
+          <span>Mais projetos em breve! (Em construção)</span>
+        </div>
       </motion.div>
     </motion.section>
   );

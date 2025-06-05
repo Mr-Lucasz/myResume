@@ -43,8 +43,6 @@ export function Main() {
           <AnimatedCursor color="193, 11, 111" />
           <Header />
           <main className={styles.mainContent}>
-            <h1>{t('welcome')}</h1>
-            {/* Renderize todas as seções diretamente aqui */}
             <AboutMe />
             <Experiences />
             <Skills />
