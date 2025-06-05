@@ -115,6 +115,7 @@
   color: #ffffff;
   margin-top: 0;
   z-index: 2;
+  gap: 3.5rem;
 }
 
 .mainContent > section {
@@ -123,6 +124,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 2.5rem;
 }
 
 .page {
@@ -136,32 +138,27 @@
 @media (max-width: 1024px) {
   .mainContent {
     padding: 0 1.2rem;
+    gap: 2.2rem;
   }
-  .playButton {
-    width: 180px;
-    height: 44px;
-    font-size: 1rem;
+  .mainContent > section {
+    margin-bottom: 1.5rem;
   }
 }
 @media (max-width: 768px) {
   .mainContent {
     padding: 0 0.5rem;
+    gap: 1.2rem;
   }
-  .playButton {
-    width: 140px;
-    height: 38px;
-    font-size: 0.95rem;
+  .mainContent > section {
+    margin-bottom: 1rem;
   }
 }
 @media (max-width: 480px) {
   .mainContent {
     padding: 0 0.2rem;
+    gap: 0.7rem;
   }
-  .playButton {
-    width: 98vw;
-    max-width: 320px;
-    height: 36px;
-    font-size: 0.9rem;
-    border-radius: 7px;
+  .mainContent > section {
+    margin-bottom: 0.5rem;
   }
 }
