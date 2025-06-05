@@ -13,7 +13,7 @@
     "chart.js": "^4.4.9",
     "framer-motion": "^11.1.9",
     "i18next": "^25.2.1",
-    "lottie-react": "^2.4.0",
+    "lottie-react": "^2.4.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-animated-cursor": "^2.11.2",
